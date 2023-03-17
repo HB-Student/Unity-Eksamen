@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class moveCam : MonoBehaviour
 {
-    public float zoom;
+    float zoom;
     // Start is called before the first frame update
     float camZ;
     void Start()

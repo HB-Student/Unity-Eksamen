@@ -6,6 +6,7 @@ public class lootTable : MonoBehaviour
 {
     public List<GameObject> slimeDrops = new List<GameObject>();
     public List<int> slimeChances = new List<int>();
+    
     public List<drop> getTable(string type)
     {
         List<drop> loot = new List<drop>();

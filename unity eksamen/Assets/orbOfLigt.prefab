@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2638527412492453554}
   - component: {fileID: 8861974172589463079}
-  - component: {fileID: 8824157095818176949}
   m_Layer: 0
   m_Name: orbOfLigt
   m_TagString: Untagged
@@ -85,15 +84,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8824157095818176949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9189384017801072035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc596ee7d5a8624eb7b03ac64866665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

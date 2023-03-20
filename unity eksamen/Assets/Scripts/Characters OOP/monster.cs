@@ -13,14 +13,13 @@ public class drop{
 
 public abstract class monster : character
 {	
-	public lootTable lootList;
+	lootTable lootList;
 	void Start(){
 		lootList = GameObject.FindGameObjectWithTag("lootTable").GetComponent<lootTable>();
 	}
 
 	public void dead(string monstertype){
 		List<drop> drops = lootList.getTable(monstertype);
-		print(drops[1].item);
 		foreach (var drop in drops)
 		{
 			if (Random.Range(0,100)<=drop.dropChance){

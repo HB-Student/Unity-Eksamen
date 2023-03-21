@@ -5,25 +5,13 @@ using UnityEngine;
 public class slime : monster
 {
 	public bool moveing = false;
-	GameObject target;
+	string monsterType = "slime";
 
 	public void Start(){
 		health = 100;
 		agility = 1;
 		scanRadius = 4;
-
-		target = new GameObject("target");
-		target.transform.position = new Vector2(0,0);
-	}
-
-	public override void decide()
-	{
-		if (scan("hero")){
-			doing = action.combat;
-		}
-		 else {
-			doing = action.Move;
-		}
+		
 	}
 	bool cooldownOn = false;
 
@@ -69,23 +57,9 @@ public class slime : monster
 		}
 	}
 
-	public void move(){
-		transform.position = Vector2.MoveTowards(transform.position,target.transform.position,agility*0.01f);
-		doing = action.Idle;
-	}
-
-	public void checkIfDead(){
-		if (health<=0)
-		{
-			dead("slime");
-		}
-	}
-
 	void Update(){
-		checkIfDead();
 		if (Input.GetKeyDown(KeyCode.E)){
-			dead("slime");
-			print("Killed Slime");
+			dead();
 		}
 		if (Input.GetKey(KeyCode.S)){
 			decide();

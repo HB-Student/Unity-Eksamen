@@ -14,12 +14,19 @@ public class drop{
 public abstract class monster : character
 {	
 	lootTable lootList;
+	string monsterType;
 	void Start(){
 		lootList = GameObject.FindGameObjectWithTag("lootTable").GetComponent<lootTable>();
 	}
+	void Update(){
+		if (health<=0)
+		{
+			dead();
+		}
+	}
 
-	public void dead(string monstertype){
-		List<drop> drops = lootList.getTable(monstertype);
+	public void dead(){
+		List<drop> drops = lootList.getTable(monsterType);
 		foreach (var drop in drops)
 		{
 			if (Random.Range(0,100)<=drop.dropChance){
@@ -27,5 +34,14 @@ public abstract class monster : character
 			}
 		}
 		Destroy(gameObject);
+	}
+	public override void decide()
+	{
+		if (scan("hero")){
+			doing = action.combat;
+		}
+		 else {
+			doing = action.Move;
+		}
 	}
 }

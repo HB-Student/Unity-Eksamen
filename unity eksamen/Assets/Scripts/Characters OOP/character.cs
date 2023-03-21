@@ -32,4 +32,15 @@ public abstract class character : MonoBehaviour, characterInterface
 		}
 		return false;
 	}
+	GameObject target;
+	void Start(){
+		target = new GameObject("target");
+		target.transform.position = (Vector2)transform.position;
 	}
+	public void move(){
+		transform.position = Vector2.MoveTowards(transform.position,target.transform.position,agility*0.01f);
+		if (transform.position == target.transform.position){
+			doing = action.Idle;
+		}
+	}
+}

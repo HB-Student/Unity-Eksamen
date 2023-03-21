@@ -1,0 +1,40 @@
+@startuml
+class player{
+
+}
+
+class camera {
+
+}
+
+abstract character {
+hp: Integer
+level: Integer
+strength: Integer
+defense: Integer
+abilityHaste: Integer
+void attack()
+void defend()
+}
+
+class hero{
+
+}
+
+class enemy{
+
+}
+
+class upgradePath{
+
+}
+
+class upgrades{
+
+}
+
+character <|-- enemy
+character <|-- hero
+
+
+@enduml

@@ -169,6 +169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterTypes:
   - {fileID: 2898378095320298682, guid: e6b9ab1b84ee42746b784c5103b7778c, type: 3}
+  heros:
+  - {fileID: 3739596878948285805, guid: 87e2d19339a2ca049878138c3380c992, type: 3}
 --- !u!1 &91380746
 GameObject:
   m_ObjectHideFlags: 0

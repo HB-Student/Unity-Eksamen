@@ -5,15 +5,18 @@ using UnityEngine;
 public class spawner : MonoBehaviour
 {
     public List<GameObject> monsterTypes = new List<GameObject>();
+    public List<GameObject> heros = new List<GameObject>();
 
     void Start()
     {
-        StartCoroutine(gameStart());
-    }
-
-    IEnumerator gameStart(){
-        GameObject monster = Instantiate(monsterTypes[0],transform.position,Quaternion.identity);
-        yield return new WaitForSeconds(1f);
-        print("Spawned: " + monster.name);
+        foreach (var monster in monsterTypes)
+        {
+            Vector2 randomSpawnPos = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
+            Instantiate(monster, randomSpawnPos, Quaternion.identity);
+        }
+        foreach (var hero in heros)
+        {
+            Instantiate(hero, new Vector2(0, 0), Quaternion.identity);
+        }
     }
 }

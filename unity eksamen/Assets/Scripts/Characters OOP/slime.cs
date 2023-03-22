@@ -4,66 +4,99 @@ using UnityEngine;
 
 public class slime : monster
 {
-	public bool moveing = false;
-	string monsterType = "slime";
 
-	public void Start(){
-		health = 100;
-		agility = 1;
-		scanRadius = 4;
-		
-	}
-	bool cooldownOn = false;
+    void Start()
+    {
+        createTarget();
+        monsterType = "slime";
+        health = 100;
+        agility = 1;
+        sightRadius = 4;
+    }
 
-	public override void doSomething()
-	{
-		switch (doing)
-		{
-			case action.Move:
-			move();
-			break;
-			
-			case action.combat:
-			if (!cooldownOn){
-				cooldownOn = true;
-				StartCoroutine(combat());
-			}
-			break;
+    bool cooldownOn = false;
 
-			default:
-			return;
-		}
-	}
-	IEnumerator combat(){
-		chooseMove();
-		yield return new WaitForSeconds(3/abilityHaste);
-		cooldownOn = false;
-	}
-	public void chooseMove(){
-		int randomInt = Random.Range(1,3);
-		switch (randomInt)
-		{
-			case 1:
-			break;
-			
-			case 2:
-			break;
+    public override void doSomething()
+    {
+        switch (doing)
+        {
+            case action.Move:
+                if (enemy == null)
+                {
+                    target.transform.position = new Vector2(0, 0);
+                }
+                move();
+                break;
+            case action.combat:
+                target.transform.position = enemy.transform.position;
+                if (!cooldownOn)
+                {
+                    cooldownOn = true;
+                    chooseAttack();
+                }
+                move();
+                break;
 
-			case 3:
-			break;
+            default:
+                return;
+        }
+    }
 
-			default:
-			return;
-		}
-	}
+    public List<GameObject> scan(string scanningTag, int colliderRadius)
+    {
+        Collider[] overlapCollider = Physics.OverlapSphere(transform.position, colliderRadius);
+        List<GameObject> enemies = new List<GameObject>();
+        for (int i = 0; i < overlapCollider.Length; i++)
+        {
+            if (overlapCollider[i].gameObject.tag == scanningTag)
+            {
+                enemies.Add(overlapCollider[i].gameObject);
+            }
+        }
+        return enemies;
+    }
 
-	void Update(){
-		if (Input.GetKeyDown(KeyCode.E)){
-			dead();
-		}
-		if (Input.GetKey(KeyCode.S)){
-			decide();
-			doSomething();
-		}
-	}
+    public void chooseAttack()
+    {
+        int randomInt = Random.Range(1, 1);
+        switch (randomInt)
+        {
+            case 1:
+                StartCoroutine(dash());
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                return;
+        }
+    }
+
+    IEnumerator dash()
+    {
+        agility++;
+        yield return new WaitForSeconds(1f);
+        agility--;
+        List<GameObject> enemies = scan("hero", 2);
+        foreach (var enemy in enemies)
+        {
+            enemy.GetComponent<hero>().takeDamage(5);
+        }
+        cooldownOn = false;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            dead();
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+
+        }
+        decide();
+        doSomething();
+    }
 }

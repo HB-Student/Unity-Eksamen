@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - lootTable
+  - hero
+  - monster
   layers:
   - Default
   - TransparentFX

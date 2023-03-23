@@ -11,6 +11,7 @@ public abstract class character : MonoBehaviour, characterInterface
         combat
     }
     public action doing = action.Idle;
+    public Color originalColor;
     public int health;
     public int vitality;
     public int strength;
@@ -27,10 +28,9 @@ public abstract class character : MonoBehaviour, characterInterface
 
     IEnumerator damageVisual()
     {
-        Color originalColor = gameObject.GetComponent<SpriteRenderer>().color;
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        gameObject.GetComponent<SpriteRenderer>().color = originalColor;
+        yield return new WaitForSeconds(0.2f);
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     public int sightRadius;
@@ -66,22 +66,15 @@ public abstract class character : MonoBehaviour, characterInterface
 
     public GameObject target;
 
-    public void createTarget()
+    public void fakeStart()
     {
+        Color originalColor = gameObject.GetComponent<SpriteRenderer>().color;
         target = new GameObject("target");
         target.transform.position = (Vector2)transform.position;
     }
 
     public void move()
     {
-        if (Vector2.Distance(transform.position, target.transform.position) <= 0.75f)
-        {
-            target.transform.position = transform.position;
-            doing = action.Idle;
-        }
-        else
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, agility * 0.01f);
-        }
+        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, agility * 0.01f);
     }
 }

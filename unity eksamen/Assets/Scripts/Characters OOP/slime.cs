@@ -7,7 +7,7 @@ public class slime : monster
 
     void Start()
     {
-        createTarget();
+        fakeStart();
         monsterType = "slime";
         health = 100;
         agility = 1;
@@ -21,7 +21,6 @@ public class slime : monster
         switch (doing)
         {
             case action.Move:
-                target.transform.position = new Vector2(0, 0);
                 move();
                 break;
             case action.combat:
@@ -31,7 +30,6 @@ public class slime : monster
                     cooldownOn = true;
                     chooseAttack();
                 }
-                move();
                 break;
 
             default:

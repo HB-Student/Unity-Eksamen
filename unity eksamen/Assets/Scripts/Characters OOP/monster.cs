@@ -43,9 +43,16 @@ public abstract class monster : character
     }
     public override void decide()
     {
-        if (scanBool("hero", sightRadius))
-        {
-            doing = action.combat;
+        if (Vector2.Distance(transform.position, target.transform.position) <= 1f){
+            target.transform.position = transform.position;
+            if (scanBool("hero", sightRadius))
+            {
+                doing = action.combat;
+            }
+            else
+            {
+                doing = action.Move;
+            }
         }
         else
         {

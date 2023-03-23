@@ -8,7 +8,7 @@ public class wizard : hero
     public GameObject projectile;
     void Start()
     {
-        createTarget();
+        fakeStart();
         health = 100;
         agility = 1;
         sightRadius = 6;

@@ -21,10 +21,7 @@ public class slime : monster
         switch (doing)
         {
             case action.Move:
-                if (enemy == null)
-                {
-                    target.transform.position = new Vector2(0, 0);
-                }
+                target.transform.position = new Vector2(0, 0);
                 move();
                 break;
             case action.combat:
@@ -40,20 +37,6 @@ public class slime : monster
             default:
                 return;
         }
-    }
-
-    public List<GameObject> scan(string scanningTag, int colliderRadius)
-    {
-        Collider[] overlapCollider = Physics.OverlapSphere(transform.position, colliderRadius);
-        List<GameObject> enemies = new List<GameObject>();
-        for (int i = 0; i < overlapCollider.Length; i++)
-        {
-            if (overlapCollider[i].gameObject.tag == scanningTag)
-            {
-                enemies.Add(overlapCollider[i].gameObject);
-            }
-        }
-        return enemies;
     }
 
     public void chooseAttack()
@@ -78,7 +61,7 @@ public class slime : monster
         agility++;
         yield return new WaitForSeconds(1f);
         agility--;
-        List<GameObject> enemies = scan("hero", 2);
+        List<GameObject> enemies = scanList("hero", 2);
         foreach (var enemy in enemies)
         {
             enemy.GetComponent<hero>().takeDamage(5);

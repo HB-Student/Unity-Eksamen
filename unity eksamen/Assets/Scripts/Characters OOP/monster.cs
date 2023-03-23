@@ -43,7 +43,7 @@ public abstract class monster : character
     }
     public override void decide()
     {
-        if (enemyScan("hero", sightRadius))
+        if (scanBool("hero", sightRadius))
         {
             doing = action.combat;
         }

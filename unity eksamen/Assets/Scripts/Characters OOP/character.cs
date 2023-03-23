@@ -36,9 +36,9 @@ public abstract class character : MonoBehaviour, characterInterface
     public int sightRadius;
     public GameObject enemy;
 
-    public bool enemyScan(string opponentTag, int colliderRadius)
+    public bool scanBool(string opponentTag, int colliderRadius)
     {
-        Collider[] overlapCollider = Physics.OverlapSphere(transform.position, colliderRadius);
+        Collider2D[] overlapCollider = Physics2D.OverlapCircleAll(transform.position, colliderRadius);
         for (int i = 0; i < overlapCollider.Length; i++)
         {
             if (overlapCollider[i].gameObject.tag == opponentTag)
@@ -48,6 +48,20 @@ public abstract class character : MonoBehaviour, characterInterface
             }
         }
         return false;
+    }
+
+    public List<GameObject> scanList(string scanningTag, int colliderRadius)
+    {
+        Collider2D[] overlapCollider = Physics2D.OverlapCircleAll(transform.position, colliderRadius);
+        List<GameObject> enemies = new List<GameObject>();
+        for (int i = 0; i < overlapCollider.Length; i++)
+        {
+            if (overlapCollider[i].gameObject.tag == scanningTag)
+            {
+                enemies.Add(overlapCollider[i].gameObject);
+            }
+        }
+        return enemies;
     }
 
     public GameObject target;

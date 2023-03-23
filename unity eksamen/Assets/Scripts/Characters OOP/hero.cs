@@ -1,12 +1,10 @@
 public abstract class hero : character
 {
-    public int wisdom;
-    public int intelligence;
     public int mana;
 
     public override void decide()
     {
-        if (enemyScan("monster", sightRadius))
+        if (scanBool("monster", sightRadius))
         {
             doing = action.combat;
         }

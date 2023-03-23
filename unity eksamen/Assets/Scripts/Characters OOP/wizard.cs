@@ -5,8 +5,11 @@ public class wizard : hero
 {
     bool cooldownOn = false;
     float startTime;
+    public GameObject projectile;
     void Start()
     {
+        createTarget();
+        sightRadius = 6;
     }
 
     public override void doSomething()
@@ -27,7 +30,9 @@ public class wizard : hero
                 {
                     if (startTime + 3 / abilityHaste - Time.time <= 0)
                     {
-                        // Add a shot projectile here.
+                        GameObject magicBall = Instantiate(projectile,transform.position,Quaternion.identity);
+                        magicBall.GetComponent<chase>().target = enemy;
+                        magicBall.GetComponent<chase>().damage = 10*strength;
                         cooldownOn = false;
                     }
                 }
@@ -39,6 +44,7 @@ public class wizard : hero
     }
     void Update()
     {
-        //decide();
+        decide();
+        doSomething();
     }
 }

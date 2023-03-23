@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3222422034961995065}
   - component: {fileID: -2493847693991647130}
   - component: {fileID: 1768379373289990530}
-  - component: {fileID: 1147159548394819886}
+  - component: {fileID: 7590128341277778376}
   m_Layer: 0
   m_Name: wizard
   m_TagString: hero
@@ -55,9 +55,8 @@ MonoBehaviour:
   sightRadius: 6
   enemy: {fileID: 0}
   target: {fileID: 0}
-  wisdom: 1
-  intelligence: 1
   mana: 1
+  projectile: {fileID: 2765945506480078540, guid: f14239c204cb2aa45b3cb40154af76e1, type: 3}
 --- !u!212 &1768379373289990530
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -110,16 +109,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &1147159548394819886
-BoxCollider:
+--- !u!61 &7590128341277778376
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3739596878948285805}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

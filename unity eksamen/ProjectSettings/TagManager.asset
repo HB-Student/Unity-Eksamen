@@ -6,6 +6,7 @@ TagManager:
   tags:
   - lootTable
   - hero
+  - Undefined
   - monster
   layers:
   - Default

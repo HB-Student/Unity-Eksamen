@@ -10,10 +10,7 @@ public abstract class hero : character
         }
         else
         {
-            if (doing != action.Move)
-            {
-                doing = action.Idle;
-            }
+            doing = action.Move;
         }
     }
 }

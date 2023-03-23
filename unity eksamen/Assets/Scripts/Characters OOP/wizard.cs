@@ -9,6 +9,8 @@ public class wizard : hero
     void Start()
     {
         createTarget();
+        health = 100;
+        agility = 1;
         sightRadius = 6;
     }
 

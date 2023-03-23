@@ -16,7 +16,8 @@ public class spawner : MonoBehaviour
         }
         foreach (var hero in heros)
         {
-            Instantiate(hero, new Vector2(0, 0), Quaternion.identity);
+            Vector2 randomSpawnPos = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+            Instantiate(hero, randomSpawnPos, Quaternion.identity);
         }
     }
 }

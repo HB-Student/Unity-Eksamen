@@ -74,8 +74,9 @@ public abstract class character : MonoBehaviour, characterInterface
 
     public void move()
     {
-        if (Vector2.Distance(transform.position, target.transform.position) <= 0.5f)
+        if (Vector2.Distance(transform.position, target.transform.position) <= 0.75f)
         {
+            target.transform.position = transform.position;
             doing = action.Idle;
         }
         else

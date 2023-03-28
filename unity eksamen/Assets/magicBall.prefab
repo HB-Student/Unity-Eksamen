@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3356189289106967069}
   - component: {fileID: 6523287105019849165}
-  - component: {fileID: 1377496390661398127}
-  - component: {fileID: -8601357426920397113}
-  - component: {fileID: 2131766144953616613}
+  - component: {fileID: 2938623871812034504}
   m_Layer: 0
   m_Name: magicBall
   m_TagString: Untagged
@@ -87,23 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1377496390661398127
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2765945506480078540}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &-8601357426920397113
+--- !u!114 &2938623871812034504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,24 +94,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2765945506480078540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a9afc4a21149bb4db326a9988dafdbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 46a7aa44c9118df4ca005ec5f3fcc1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 2
---- !u!58 &2131766144953616613
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2765945506480078540}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  speed: 12
+  damage: 5

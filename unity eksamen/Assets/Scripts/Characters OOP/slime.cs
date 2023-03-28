@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,14 +8,13 @@ public class slime : monster
 
     void Start()
     {
-        fakeStart();
+        monsterStart();
+        monsterUpdate();
         monsterType = "slime";
         health = 100;
-        agility = 1;
-        sightRadius = 4;
+        agility.baseStat = 1;
+        sightRadius.baseStat = 4;
     }
-
-    bool cooldownOn = false;
 
     public override void doSomething()
     {
@@ -39,7 +39,7 @@ public class slime : monster
 
     public void chooseAttack()
     {
-        int randomInt = Random.Range(1, 1);
+        int randomInt = UnityEngine.Random.Range(1, 1);
         switch (randomInt)
         {
             case 1:
@@ -56,15 +56,19 @@ public class slime : monster
 
     IEnumerator dash()
     {
-        agility++;
-        yield return new WaitForSeconds(1f);
-        agility--;
-        List<GameObject> enemies = scanList("hero", 2);
+        float startTime = Time.time;
+        int startSpeed = agility.bonusPercentage;
+        agility.bonusPercentage+=40;
+        yield return new WaitUntil(new Func<bool>(() => scanBool("hero",1)));
+        agility.bonusPercentage = -100;
+        List<GameObject> enemies = scanList("hero", 1.5f);
         foreach (var enemy in enemies)
         {
             enemy.GetComponent<hero>().takeDamage(5);
         }
+        yield return new WaitUntil(new Func<bool>(() => Time.time-startTime >= 2));
         cooldownOn = false;
+        agility.bonusPercentage = startSpeed;
     }
 
     void Update()
@@ -72,10 +76,6 @@ public class slime : monster
         if (Input.GetKeyDown(KeyCode.E))
         {
             dead();
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-
         }
         decide();
         doSomething();

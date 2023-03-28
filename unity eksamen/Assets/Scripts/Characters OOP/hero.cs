@@ -8,7 +8,7 @@ public abstract class hero : character
     {
         if (Vector2.Distance(transform.position, target.transform.position) <= 0.75f){
             target.transform.position = transform.position;
-            if (scanBool("monster", sightRadius))
+            if (scanBool("monster", sightRadius.totalStat()))
             {
                 doing = action.combat;
             }

@@ -1,17 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 public class wizard : hero
 {
-    bool cooldownOn = false;
     float startTime;
     public GameObject projectile;
     void Start()
     {
-        fakeStart();
+        characterStart();
         health = 100;
-        agility = 1;
-        sightRadius = 6;
+        sightRadius.baseStat = 6;
     }
 
     public override void doSomething()
@@ -30,11 +26,11 @@ public class wizard : hero
                 }
                 else
                 {
-                    if (startTime + 3 / abilityHaste - Time.time <= 0)
+                    if (startTime + 3 / abilityHaste.totalStat() - Time.time <= 0)
                     {
                         GameObject magicBall = Instantiate(projectile,transform.position,Quaternion.identity);
-                        magicBall.GetComponent<chase>().target = enemy;
-                        magicBall.GetComponent<chase>().damage = 10*strength;
+                        magicBall.GetComponent<wizardBullet>().target = enemy;
+                        magicBall.GetComponent<wizardBullet>().damage = 10*strength.totalStat();
                         cooldownOn = false;
                     }
                 }

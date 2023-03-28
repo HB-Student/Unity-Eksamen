@@ -168,8 +168,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aa0758630268eb4c8cd9e62bad37862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterTypes: []
+  monsterTypes:
+  - {fileID: 2898378095320298682, guid: e6b9ab1b84ee42746b784c5103b7778c, type: 3}
   heros:
+  - {fileID: 3739596878948285805, guid: 87e2d19339a2ca049878138c3380c992, type: 3}
+  - {fileID: 3739596878948285805, guid: 87e2d19339a2ca049878138c3380c992, type: 3}
+  - {fileID: 3739596878948285805, guid: 87e2d19339a2ca049878138c3380c992, type: 3}
+  - {fileID: 3739596878948285805, guid: 87e2d19339a2ca049878138c3380c992, type: 3}
+  - {fileID: 3739596878948285805, guid: 87e2d19339a2ca049878138c3380c992, type: 3}
   - {fileID: 3739596878948285805, guid: 87e2d19339a2ca049878138c3380c992, type: 3}
 --- !u!1 &91380746
 GameObject:

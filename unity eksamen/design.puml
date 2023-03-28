@@ -1,0 +1,100 @@
+@startuml
+
+abstract class scanners{
+	sightRadius: stat
+	enemy: GameObject
+	bool scanBool()
+	List<GameObject> scanList()
+
+}
+
+interface characterInterface{
+	+void doSomething()
+	+void decide()
+}
+
+abstract class character {
+	enum action
+	doing: action
+	target: GameObject
+	hp: Integer
+	vitality: stat
+	strength: stat
+	agility: stat
+	abilityHaste: stat
+	cooldownOn: bool
+	abstract void decide()
+	abstract void doSomething()
+	void takeDamage()
+	IEnumerator damageVisual()
+	void characterStart()
+	void move()
+}
+
+class lootTable {
+	slimeDrops: List<GameObject>
+	slimeChances: List<Integer>
+	List<drop> getTable(String)
+}
+class drop {
+	dropChance: Integer
+	item: GameObject
+	drop(Integet, GameObject)
+}
+
+abstract class monster{
+	lootList: lootTable
+	monsterType: String
+	void monsterStart()
+	override void decide()
+	void monsterUpdate()
+	void dead()
+}
+
+class slime{
+	void Start()
+	void Update()
+	override void doSomething()
+	void chooseAttack()
+	IEnumerator dash()
+
+}
+
+abstract class hero{
+	mana: Integer
+	override void decide()
+}
+
+
+class wizard{
+	startTime: Float
+	projectile: GameObject
+	void Start()
+	void Update()
+	override void doSomething()
+}
+
+class wizardBullet{
+	target: GameObject
+	speed: Integer
+	damage: Integer
+}
+
+class stat{
+	baseStat: Integer
+	BonusStat: Integer
+	bonusPercentage: Integer
+	int totalStat()
+}
+
+character <|-- characterInterface
+character <|-- monster
+character <|-- hero
+hero <|-- wizard
+monster <|-- slime
+wizardBullet "*"*.."1" character
+scanners <|-- character
+scanners <|-- wizardBullet
+
+
+@enduml

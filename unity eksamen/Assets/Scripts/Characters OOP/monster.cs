@@ -1,33 +1,20 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class drop
-{
-    public int dropChance;
-    public GameObject item;
-    public drop(int c, GameObject d)
-    {
-        dropChance = c;
-        item = d;
-    }
-}
 
 public abstract class monster : character
 {
     lootTable lootList;
     public string monsterType;
-    void Start()
+    public void monsterStart()
     {
+        characterStart();
         lootList = GameObject.FindGameObjectWithTag("lootTable").GetComponent<lootTable>();
     }
-    void Update()
-    {
-        if (health <= 0)
-        {
+    public void monsterUpdate(){
+        if (health <= 0){
             dead();
         }
-    }
+    } 
 
     public void dead()
     {
@@ -45,7 +32,7 @@ public abstract class monster : character
     {
         if (Vector2.Distance(transform.position, target.transform.position) <= 1f){
             target.transform.position = transform.position;
-            if (scanBool("hero", sightRadius))
+            if (scanBool("hero", sightRadius.totalStat()))
             {
                 doing = action.combat;
             }

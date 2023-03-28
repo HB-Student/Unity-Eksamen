@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class character : MonoBehaviour, characterInterface
+public abstract class character : scanners, characterInterface
 {
     public enum action
     {
@@ -13,10 +13,11 @@ public abstract class character : MonoBehaviour, characterInterface
     public action doing = action.Idle;
     public Color originalColor;
     public int health;
-    public int vitality;
-    public int strength;
-    public int agility;
-    public int abilityHaste;
+    public stat vitality = new stat();
+    public stat strength = new stat();
+    public stat agility = new stat();
+    public stat abilityHaste = new stat();
+    public bool cooldownOn = false;
     public abstract void decide();
     public abstract void doSomething();
 
@@ -33,40 +34,8 @@ public abstract class character : MonoBehaviour, characterInterface
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    public int sightRadius;
-    public GameObject enemy;
-
-    public bool scanBool(string opponentTag, int colliderRadius)
-    {
-        Collider2D[] overlapCollider = Physics2D.OverlapCircleAll(transform.position, colliderRadius);
-        for (int i = 0; i < overlapCollider.Length; i++)
-        {
-            if (overlapCollider[i].gameObject.tag == opponentTag)
-            {
-                enemy = overlapCollider[i].gameObject;
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public List<GameObject> scanList(string scanningTag, int colliderRadius)
-    {
-        Collider2D[] overlapCollider = Physics2D.OverlapCircleAll(transform.position, colliderRadius);
-        List<GameObject> enemies = new List<GameObject>();
-        for (int i = 0; i < overlapCollider.Length; i++)
-        {
-            if (overlapCollider[i].gameObject.tag == scanningTag)
-            {
-                enemies.Add(overlapCollider[i].gameObject);
-            }
-        }
-        return enemies;
-    }
-
     public GameObject target;
-
-    public void fakeStart()
+    public void characterStart()
     {
         Color originalColor = gameObject.GetComponent<SpriteRenderer>().color;
         target = new GameObject("target");
@@ -75,6 +44,6 @@ public abstract class character : MonoBehaviour, characterInterface
 
     public void move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, agility * 0.01f);
+        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, agility.totalStat() * 0.01f);
     }
 }

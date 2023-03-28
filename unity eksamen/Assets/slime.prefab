@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doing: 0
-  health: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  health: 1
   vitality: 0
   strength: 0
   agility: 0

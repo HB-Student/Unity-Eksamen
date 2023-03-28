@@ -40,11 +40,11 @@ public class archerBranch : branch
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void activate_skill(int skillToAdd){
+        Debug.Log(skillToAdd);
     }
+    // Update is called once per frame
+
 
 }
 
@@ -55,10 +55,10 @@ public class skill{
     public string description;
     public int price;
     public bool isActive;
-    public skill(int x, string k){
+    public skill(int x, string skillname){
         price=x;
         isActive=false;
-        name=k;
+        name=skillname;
     }
     public void activate(){
         isActive=true;

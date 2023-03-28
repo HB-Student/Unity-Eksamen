@@ -25,16 +25,34 @@ class enemy{
 
 }
 
-class upgradePath{
+abstract class branch{
 
 }
 
-class upgrades{
+class skills{
 
+}
+
+class wizard{
+
+}
+
+class bullet{
+
+}
+
+class archerBranch{
+
+}
+abstract class ascan{
+ +bool scanbool()   
 }
 
 character <|-- enemy
 character <|-- hero
-
-
+hero <|-- wizard
+bullet "*"*.."1" character
+ascan <|-- character
+ascan <|-- bullet
+branch <|-- archerBranch
 @enduml

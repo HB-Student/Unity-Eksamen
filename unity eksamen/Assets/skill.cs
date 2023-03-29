@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class skill : playerSkills
 {
-    public string name;
+    public string skillName;
     public Button button;
     public string description;
     public int price;
     public bool isActive;
     public bool buyable = false;
     public List<skill> nextSkills = new List<skill>();
-    public skill(int x, string skillname, List<skill> _nextSkills)
+    public skill(int x, string skillname, List<skill> _nextSkills, string des)
     {
         if (_nextSkills[0] == null)
         {
@@ -24,15 +24,17 @@ public class skill : playerSkills
         }
         price = x;
         isActive = false;
-        name = skillname;
+        skillName = skillname;
+        description=des;
     }
 
-    public skill(int x, string skillname)
+    public skill(int x, string skillname, string des)
     {
         nextSkills = null;
         price = x;
         isActive = false;
-        name = skillname;
+        skillName = skillname;
+        description=des;
     }
 
     public bool activate()
@@ -53,8 +55,10 @@ public class skill : playerSkills
                 }
             }
             button.interactable=false;
-            button.GetComponent<Image>().color = Color.green;
-            updateSkills(this.name);
+            Color newColor = Color.green;
+            newColor.a=1f;
+            button.GetComponent<Image>().color = newColor;
+            updateSkills(this.skillName);
             return true;
         }
         else return false;

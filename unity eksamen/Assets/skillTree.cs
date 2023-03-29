@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class skillTree : MonoBehaviour
 {
     public GameObject skillTreePanel;
-    public GameObject skillTreeButton;
     void start(){
 
     }
@@ -17,10 +16,8 @@ public class skillTree : MonoBehaviour
 
     public void showTree(){
         skillTreePanel.SetActive(true);
-        skillTreeButton.SetActive(false);
     }
     public void hideTree(){
         skillTreePanel.SetActive(false);
-        skillTreeButton.SetActive(true);
     }
 }

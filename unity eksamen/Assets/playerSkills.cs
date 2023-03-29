@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class playerSkills : MonoBehaviour
+public abstract class playerSkills
 {
     public void updateSkills(string name)
     {

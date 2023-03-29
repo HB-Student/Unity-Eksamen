@@ -22,9 +22,7 @@ public class archerBranch : branch
         skills.Add(archer3);
         skills.Add(archer4);
 
-        fakeStart();
-        archer1.button.interactable = true;
-    }
+        fakeStart();    }
 
 
 

@@ -51,13 +51,12 @@ public class skill : playerSkills
                 {
                     skill.buyable = true;
                     skill.button.interactable = true;
-                    skill.button.GetComponent<Image>().color = Color.blue;
+                    skill.button.GetComponentInParent<buttonScript>().changeImg(1);
                 }
             }
             button.interactable=false;
-            Color newColor = Color.green;
-            newColor.a=1f;
-            button.GetComponent<Image>().color = newColor;
+
+            button.GetComponentInParent<buttonScript>().changeImg(2);
             updateSkills(this.skillName);
             return true;
         }

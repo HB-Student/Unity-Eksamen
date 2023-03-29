@@ -23,8 +23,7 @@ public class wizardBranch : branch
         skills.Add(wizard4);
 
         fakeStart();
-        wizard1.button.interactable = true;
-    }
+        }
 
 
 

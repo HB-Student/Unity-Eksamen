@@ -173,6 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d52adb5044c78a44b4d1e1c7dd029ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonImages:
+  - {fileID: -667317401, guid: be272ba52b276c3438e2cd8eecc49ab1, type: 3}
+  - {fileID: -820963549, guid: be272ba52b276c3438e2cd8eecc49ab1, type: 3}
+  - {fileID: 2002829693, guid: be272ba52b276c3438e2cd8eecc49ab1, type: 3}
   buttonPrefab: {fileID: 5412694254320020250, guid: 5f26dcf85f8ac1a4f8077b28aa39c962, type: 3}
   buttons: []
 --- !u!114 &43943127
@@ -6128,6 +6132,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5251ad2eafb1444b94dc1c5ca3f75e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonImages:
+  - {fileID: -667317401, guid: be272ba52b276c3438e2cd8eecc49ab1, type: 3}
+  - {fileID: -820963549, guid: be272ba52b276c3438e2cd8eecc49ab1, type: 3}
+  - {fileID: 2002829693, guid: be272ba52b276c3438e2cd8eecc49ab1, type: 3}
   buttonPrefab: {fileID: 5412694254320020250, guid: 5f26dcf85f8ac1a4f8077b28aa39c962, type: 3}
   buttons: []
 --- !u!114 &1051840284
@@ -6248,7 +6256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.066698, y: 24.533783}
+  m_AnchoredPosition: {x: -12.953, y: 20.515}
   m_SizeDelta: {x: 125.905, y: 141.0304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1490257301
@@ -7262,7 +7270,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 10
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -7282,5 +7290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36265b9a33262844ea0e451a2a1fdc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonImages:
+  - {fileID: -373217746, guid: 171c2e9c53ef2f54c8d179dce4ed696c, type: 3}
+  - {fileID: -501647595, guid: 171c2e9c53ef2f54c8d179dce4ed696c, type: 3}
+  - {fileID: -2027504381, guid: 171c2e9c53ef2f54c8d179dce4ed696c, type: 3}
   buttonPrefab: {fileID: 5412694254320020250, guid: 5f26dcf85f8ac1a4f8077b28aa39c962, type: 3}
   buttons: []

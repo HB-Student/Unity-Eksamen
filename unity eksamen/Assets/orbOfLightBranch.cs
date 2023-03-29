@@ -23,7 +23,6 @@ public class orbOfLightBranch : branch
         skills.Add(orb4);
 
         fakeStart();
-        orb1.button.interactable = true;
     }
 
 

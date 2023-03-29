@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public abstract class branch : MonoBehaviour
 {
+    public List<Sprite> buttonImages;
     private int evolutionPoints=15;
     public GameObject buttonPrefab;
     public List<skill> skills = new List<skill>();
@@ -16,10 +17,14 @@ public abstract class branch : MonoBehaviour
         {
             int index = i;
             buttons.Add((Instantiate(buttonPrefab)));
+            buttons[i].GetComponent<buttonScript>().images=buttonImages;
+            buttons[i].GetComponent<buttonScript>().changeImg(0);
+            buttons[i].GetComponent<buttonScript>().text=skills[i].description;
             buttons[i].transform.SetParent(gameObject.transform);
             buttons[i].GetComponent<Button>().onClick.AddListener(() => activate_skill(index));
             skills[i].button = buttons[i].GetComponent<Button>();
-        }
+            }
+            createBtn();
     }
     public void activate_skill(int skillToAdd)
     {
@@ -32,5 +37,11 @@ public abstract class branch : MonoBehaviour
             };
         }
 
+    }
+    private void createBtn(){
+        Button tempBtn =skills[0].button;
+        buttonScript tempScript=skills[0].button.GetComponentInParent<buttonScript>();
+        tempBtn.interactable=true;
+        tempScript.changeImg(1);
     }
 }

@@ -1,0 +1,58 @@
+@startuml
+class player{
+
+}
+
+class camera {
+
+}
+
+abstract character {
+hp: Integer
+level: Integer
+strength: Integer
+defense: Integer
+abilityHaste: Integer
+void attack()
+void defend()
+}
+
+class hero{
+
+}
+
+class enemy{
+
+}
+
+abstract class branch{
+
+}
+
+class skills{
+
+}
+
+class wizard{
+
+}
+
+class bullet{
+
+}
+
+class archerBranch{
+
+}
+abstract class ascan{
+ +bool scanbool()   
+}
+
+character <|-- enemy
+character <|-- hero
+hero <|-- wizard
+bullet "*"*.."1" character
+ascan <|-- character
+ascan <|-- bullet
+branch <|-- archerBranch
+@enduml

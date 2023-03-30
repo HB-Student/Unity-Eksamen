@@ -5,17 +5,19 @@ using UnityEngine;
 
 public class slime : monster
 {
-
     void Start()
     {
         monsterStart();
-        monsterUpdate();
         monsterType = "slime";
         health = 100;
-        agility.baseStat = 1;
         sightRadius.baseStat = 4;
     }
-
+    void Update()
+    {
+        monsterUpdate();
+        decide();
+        doSomething();
+    }
     public override void doSomething()
     {
         switch (doing)
@@ -28,7 +30,7 @@ public class slime : monster
                 if (!cooldownOn)
                 {
                     cooldownOn = true;
-                    chooseAttack();
+                    StartCoroutine(dash());
                 }
                 break;
 
@@ -36,48 +38,32 @@ public class slime : monster
                 return;
         }
     }
-
-    public void chooseAttack()
-    {
-        int randomInt = UnityEngine.Random.Range(1, 1);
-        switch (randomInt)
-        {
-            case 1:
-                StartCoroutine(dash());
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            default:
-                return;
-        }
-    }
-
     IEnumerator dash()
     {
         float startTime = Time.time;
-        int startSpeed = agility.bonusPercentage;
         agility.bonusPercentage+=40;
         yield return new WaitUntil(new Func<bool>(() => scanBool("hero",1)));
+        int startSpeed = agility.bonusPercentage-40;
         agility.bonusPercentage = -100;
         List<GameObject> enemies = scanList("hero", 1.5f);
         foreach (var enemy in enemies)
         {
             enemy.GetComponent<hero>().takeDamage(5);
         }
-        yield return new WaitUntil(new Func<bool>(() => Time.time-startTime >= 2));
+        yield return new WaitUntil(new Func<bool>(() => Time.time-startTime >= 3/abilityHaste.totalStat()));
         cooldownOn = false;
-        agility.bonusPercentage = startSpeed;
+        agility.bonusPercentage += 100 + startSpeed;
     }
-
-    void Update()
+/*
+    public void chooseAttack()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        switch (UnityEngine.Random.Range(1, 1))
         {
-            dead();
+            case 1:
+                break;
+            default:
+                return;
         }
-        decide();
-        doSomething();
     }
+*/
 }

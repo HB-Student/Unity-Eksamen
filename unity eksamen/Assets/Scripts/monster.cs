@@ -8,6 +8,7 @@ public abstract class monster : character
     public void monsterStart()
     {
         characterStart();
+        target.transform.position = new Vector2(0,0);
         lootList = GameObject.FindGameObjectWithTag("lootTable").GetComponent<lootTable>();
     }
     public void monsterUpdate(){

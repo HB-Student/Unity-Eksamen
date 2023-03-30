@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class scanners : MonoBehaviour
 {
-	public stat sightRadius = new stat();
+	public stat sightRadius = new stat("sightRadius");
     public GameObject enemy;
 
-    public bool scanBool(string opponentTag, int colliderRadius)
+    public bool scanBool(string opponentTag, float colliderRadius)
     {
         Collider2D[] overlapCollider = Physics2D.OverlapCircleAll(transform.position, colliderRadius);
         for (int i = 0; i < overlapCollider.Length; i++)

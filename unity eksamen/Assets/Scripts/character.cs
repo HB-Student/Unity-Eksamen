@@ -10,13 +10,15 @@ public abstract class character : scanners, characterInterface
         Move,
         combat
     }
+
+    public Dictionary<string,int> Stats = new Dictionary<string, int>();
     public action doing = action.Idle;
     public Color originalColor;
     public int health;
-    public stat vitality = new stat();
-    public stat strength = new stat();
-    public stat agility = new stat();
-    public stat abilityHaste = new stat();
+    public stat vitality = new stat("vitality");
+    public stat strength = new stat("strength");
+    public stat agility = new stat("agility");
+    public stat abilityHaste = new stat("abilityHaste");
     public bool cooldownOn = false;
     public abstract void decide();
     public abstract void doSomething();

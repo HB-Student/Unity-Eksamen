@@ -6,6 +6,7 @@ public class orbOfLight : MonoBehaviour
 {
     private levelSystem levelSys;
     public GameObject levelParticle;
+    public GameObject eatParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +35,10 @@ public class orbOfLight : MonoBehaviour
 
             // Destroy the particle system after it has finished playing
             Destroy(particleObject, particleSystem.main.duration);
+    }
+
+    public void eatMonster(int amount){
+        levelSys.addExp(amount);
+        spawnParticleEffect(eatParticle);
     }
 }

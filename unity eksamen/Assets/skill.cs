@@ -49,9 +49,11 @@ public class skill : playerSkills
             {
                 foreach (var skill in nextSkills)
                 {
+                    if(!skill.isActive){
                     skill.buyable = true;
                     skill.button.interactable = true;
                     skill.button.GetComponentInParent<buttonScript>().changeImg(1);
+                    }
                 }
             }
             button.interactable=false;

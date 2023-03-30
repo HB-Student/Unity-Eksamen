@@ -21,6 +21,9 @@ public abstract class playerSkills
             case "archer3":
 				Debug.Log("Updated archer 3");
                 break;
+            case "archer4":
+				Debug.Log("Updated archer 4");
+                break;    
             case "wizard":
 				Debug.Log("Updated wizard ");
                 break;

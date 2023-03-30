@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public abstract class branch : MonoBehaviour
 {
     public List<Sprite> buttonImages;
-    private int evolutionPoints=15;
+    public gameManager1 gameManager;
     public GameObject buttonPrefab;
     public List<skill> skills = new List<skill>();
 
     public List<GameObject> buttons = new List<GameObject>();
 
     public void fakeStart(){
+        gameManager = GameObject.Find("GameManager").GetComponent<gameManager1>();
+        Debug.Log("gamemanager");
         for (int i = 0; i < skills.Count; i++)
         {
             int index = i;
@@ -29,11 +31,11 @@ public abstract class branch : MonoBehaviour
     public void activate_skill(int skillToAdd)
     {
         skill skillToActivate = skills[skillToAdd];
-        if (skillToActivate.price <= evolutionPoints)
+        if (skillToActivate.price <= gameManager.levelSys.getTokens())
         {
             if (skillToActivate.activate())
             {
-                evolutionPoints += 20;
+                gameManager.levelSys.removeTokens(skillToActivate.price);
             };
         }
 

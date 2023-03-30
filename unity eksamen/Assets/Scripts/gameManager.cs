@@ -37,6 +37,11 @@ public class gameManager : MonoBehaviour
 	public int radius = 80;
 	void Start(){
 		spawnMonster("slime");
+		spawnMonster("slime");
+		spawnMonster("slime");
+		spawnMonster("slime");
+		spawnMonster("slime");
+		spawnMonster("slime");
 	}
 	void Update()
 	{

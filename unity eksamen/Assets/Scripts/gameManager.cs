@@ -30,8 +30,22 @@ public class gameManager : MonoBehaviour
 			default:
 				return;
 		}
-		Vector2 whereShouldItBePlaced = new Vector2(0,0);
-		GameObject monster = Instantiate(entity, whereShouldItBePlaced, Quaternion.identity);
+		GameObject monster = Instantiate(entity, randomAroundOrb(), Quaternion.identity);
 		monster.transform.SetParent(GameObject.Find(monsterType).transform);
+	}
+
+	public int radius = 80;
+	void Start(){
+		spawnMonster("slime");
+	}
+	void Update()
+	{
+		
+	}
+	Vector2 randomAroundOrb()
+	{
+		float x = Mathf.Cos(Random.Range(0,360)) * radius;
+		float y = Mathf.Sin(Random.Range(0,360)) * radius;
+		return new Vector2 (x,y);
 	}
 }

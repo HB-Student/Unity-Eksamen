@@ -42,6 +42,12 @@ public abstract class character : scanners, characterInterface
         Color originalColor = gameObject.GetComponent<SpriteRenderer>().color;
         target = new GameObject("target");
         target.transform.position = (Vector2)transform.position;
+
+        vitality = GetComponentInParent<characterManager>().vitality;
+        strength = GetComponentInParent<characterManager>().strength;
+        agility = GetComponentInParent<characterManager>().agility;
+        abilityHaste = GetComponentInParent<characterManager>().abilityHaste;
+        sightRadius = GetComponentInParent<characterManager>().sightRadius;   
     }
 
     public void move()

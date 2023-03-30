@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8050062043814803398}
-  - component: {fileID: 9037144304511003374}
   - component: {fileID: 7291386393044021164}
+  - component: {fileID: 9037144304511003374}
   - component: {fileID: 1616245275352093676}
   - component: {fileID: -8558430722656038950}
   m_Layer: 0
-  m_Name: slime
+  m_Name: slime (monster)
   m_TagString: monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,6 +35,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7291386393044021164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2898378095320298682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a5fae526b7d8b49ae41d1a3c14b9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  doing: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  health: 1
+  cooldownOn: 0
+  target: {fileID: 0}
+  monsterType: 
 --- !u!212 &9037144304511003374
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -87,29 +106,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7291386393044021164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2898378095320298682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54a5fae526b7d8b49ae41d1a3c14b9a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doing: 0
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
-  health: 1
-  vitality: 0
-  strength: 0
-  agility: 0
-  abilityHaste: 0
-  sightRadius: 0
-  enemy: {fileID: 0}
-  target: {fileID: 0}
-  monsterType: 
 --- !u!58 &1616245275352093676
 CircleCollider2D:
   m_ObjectHideFlags: 0

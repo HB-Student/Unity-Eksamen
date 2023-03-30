@@ -41,18 +41,17 @@ public class slime : monster
     IEnumerator dash()
     {
         float startTime = Time.time;
-        agility.bonusPercentage+=40;
+        agility.bonusPercentage+=60;
         yield return new WaitUntil(new Func<bool>(() => scanBool("hero",1)));
-        int startSpeed = agility.bonusPercentage-40;
         agility.bonusPercentage = -100;
-        List<GameObject> enemies = scanList("hero", 1.5f);
+        List<GameObject> enemies = scanList("hero", 1.2f);
         foreach (var enemy in enemies)
         {
             enemy.GetComponent<hero>().takeDamage(5);
         }
         yield return new WaitUntil(new Func<bool>(() => Time.time-startTime >= 3/abilityHaste.totalStat()));
+        agility.bonusPercentage = GetComponentInParent<characterManager>().agility.bonusPercentage;
         cooldownOn = false;
-        agility.bonusPercentage += 100 + startSpeed;
     }
 /*
     public void chooseAttack()

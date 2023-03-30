@@ -33,17 +33,14 @@ public abstract class monster : character
     {
         if (Vector2.Distance(transform.position, target.transform.position) <= 1f){
             target.transform.position = transform.position;
-            if (scanBool("hero", sightRadius.totalStat()))
-            {
-                doing = action.combat;
-            }
-            else
-            {
-                doing = action.Move;
-            }
+        }
+        if (scanBool("hero", sightRadius.totalStat()))
+        {
+            doing = action.combat;
         }
         else
         {
+            target.transform.position = new Vector2(0,0);
             doing = action.Move;
         }
     }

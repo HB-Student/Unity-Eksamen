@@ -16,17 +16,14 @@ public abstract class branch : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<gameManager1>();
         Debug.Log("gamemanager");
         for (int i = 0; i < skills.Count; i++)
-        {
+        {   
             int index = i;
-            buttons.Add((Instantiate(buttonPrefab)));
-            buttons[i].GetComponent<buttonScript>().images=buttonImages;
-            buttons[i].GetComponent<buttonScript>().changeImg(0);
-            buttons[i].GetComponent<buttonScript>().text=skills[i].description;
-            buttons[i].transform.SetParent(gameObject.transform);
-            buttons[i].GetComponent<Button>().onClick.AddListener(() => activate_skill(index));
-            skills[i].button = buttons[i].GetComponent<Button>();
+            GameObject newButton =Instantiate(buttonPrefab);
+            buttons.Add(newButton);
+            newButton.transform.SetParent(gameObject.transform);
+            newButton.GetComponent<buttonScript>().setSkillAndBranch(skills[i],this,index);            
             }
-            createBtn();
+            createBtnOne();
     }
     public void activate_skill(int skillToAdd)
     {
@@ -40,7 +37,7 @@ public abstract class branch : MonoBehaviour
         }
 
     }
-    private void createBtn(){
+    private void createBtnOne(){
         Button tempBtn =skills[0].button;
         buttonScript tempScript=skills[0].button.GetComponentInParent<buttonScript>();
         tempBtn.interactable=true;

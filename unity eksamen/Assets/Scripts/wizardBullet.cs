@@ -18,6 +18,9 @@ public class wizardBullet : scanners
                 enemy.gameObject.GetComponent<monster>().takeDamage(damage);
             }
             Destroy(gameObject);
+        } else if (transform.position == target.transform.position)
+        {
+            Destroy(gameObject);
         }
     }
 }

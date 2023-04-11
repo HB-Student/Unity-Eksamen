@@ -9,6 +9,7 @@ TagManager:
   - Undefined
   - monster
   - orb
+  - range
   layers:
   - Default
   - TransparentFX

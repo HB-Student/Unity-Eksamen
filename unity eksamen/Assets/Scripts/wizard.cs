@@ -41,7 +41,7 @@ public class wizard : hero
 		GameObject magicBall = Instantiate(projectile, transform.position, Quaternion.identity);
 		magicBall.GetComponent<wizardBullet>().target = enemy;
 		magicBall.GetComponent<wizardBullet>().damage = 10 * strength.totalStat();
-		yield return new WaitForSeconds(3 / abilityHaste.totalStat());
+		yield return new WaitForSeconds(3 / (1 + 0.1f * abilityHaste.totalStat()));
 		cooldownOn = false;
 	}
 }

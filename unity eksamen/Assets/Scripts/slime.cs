@@ -5,64 +5,76 @@ using UnityEngine;
 
 public class slime : monster
 {
-    void Start()
-    {
-        monsterStart();
-        monsterType = "slime";
-        health = 100;
-        sightRadius.baseStat = 4;
-    }
-    void Update()
-    {
-        monsterUpdate();
-        decide();
-        doSomething();
-    }
-    public override void doSomething()
-    {
-        switch (doing)
-        {
-            case action.Move:
-                move();
-                break;
-            case action.combat:
-                target.transform.position = enemy.transform.position;
-                if (!cooldownOn)
-                {
-                    cooldownOn = true;
-                    StartCoroutine(dash());
-                }
-                break;
+	void Start()
+	{
+		monsterStart();
+		monsterType = "slime";
+		health = 10;
+		sightRadius.baseStat = 4;
+	}
+	void Update()
+	{
+		monsterUpdate();
+		decide();
+		doSomething();
+	}
+	public override void doSomething()
+	{
+		switch (doing)
+		{
+			case action.Move:
+				move();
+				break;
+			case action.combat:
+				target.transform.position = enemy.transform.position;
+				if (!cooldownOn)
+				{
+					cooldownOn = true;
+					StartCoroutine(dash());
+				}
+				else
+				{
+					move();
+				}
+				break;
 
-            default:
-                return;
-        }
-    }
-    IEnumerator dash()
-    {
-        float startTime = Time.time;
-        agility.bonusPercentage+=60;
-        yield return new WaitUntil(new Func<bool>(() => scanBool("hero",1)));
-        agility.bonusPercentage = -100;
-        List<GameObject> enemies = scanList("hero", 1.2f);
-        foreach (var enemy in enemies)
-        {
-            enemy.GetComponent<hero>().takeDamage(5);
-        }
-        yield return new WaitUntil(new Func<bool>(() => Time.time-startTime >= 3/abilityHaste.totalStat()));
-        agility.bonusPercentage = GetComponentInParent<characterManager>().agility.bonusPercentage;
-        cooldownOn = false;
-    }
-/*
-    public void chooseAttack()
-    {
-        switch (UnityEngine.Random.Range(1, 1))
-        {
-            case 1:
-                break;
-            default:
-                return;
-        }
-    }
-*/
+			default:
+				return;
+		}
+	}
+	public bool touchingHero = false;
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.transform.tag == "hero")
+		{
+			touchingHero = true;
+		}
+	}
+	void OnCollisionExit2D(Collision2D other)
+	{
+		if (other.transform.tag == "hero")
+		{
+			touchingHero = false;
+		}
+	}
+
+	IEnumerator dash()
+	{
+		float startTime = Time.time;
+		agility.bonusPercentage += 100;
+		yield return new WaitUntil(new Func<bool>(() => touchingHero || Time.time - startTime >= 3));
+		if (Time.time - startTime <= 3)
+		{
+			startTime = Time.time;
+			agility.bonusPercentage = -100;
+			List<GameObject> enemies = scanList("hero", 0.75f);
+			foreach (var enemy in enemies)
+			{
+				enemy.GetComponent<hero>().takeDamage(5);
+			}
+			yield return new WaitUntil(new Func<bool>(() => Time.time - startTime >= 3 / (1 + 0.1f * abilityHaste.totalStat())));
+		}
+		agility.bonusPercentage = GetComponentInParent<characterManager>().agility.bonusPercentage;
+		cooldownOn = false;
+	}
 }

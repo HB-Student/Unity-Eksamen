@@ -5,6 +5,7 @@ public class gameManager : MonoBehaviour
 {
 	public GameObject Wizard;
 	public GameObject Slime;
+	public GameObject Goblin;
 	public void spawnHero(string heroType)
 	{
 		GameObject entity;
@@ -27,6 +28,9 @@ public class gameManager : MonoBehaviour
 			case "slime":
 				entity = Slime;
 				break;
+			case "goblin":
+				entity = Goblin;
+				break;
 			default:
 				return;
 		}
@@ -34,18 +38,14 @@ public class gameManager : MonoBehaviour
 		monster.transform.SetParent(GameObject.Find(monsterType).transform);
 	}
 
-	public int radius = 80;
+	public int radius = 30;
 	void Start(){
-		spawnMonster("slime");
-		spawnMonster("slime");
-		spawnMonster("slime");
-		spawnMonster("slime");
-		spawnMonster("slime");
-		spawnMonster("slime");
-	}
-	void Update()
-	{
-		
+		spawnHero("wizard");
+		for (int i = 0; i < 6; i++)
+		{
+			spawnMonster("slime");
+			spawnMonster("goblin");
+		}
 	}
 	Vector2 randomAroundOrb()
 	{

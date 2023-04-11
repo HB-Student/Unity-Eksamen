@@ -49,8 +49,9 @@ public class gameManager : MonoBehaviour
 	}
 	Vector2 randomAroundOrb()
 	{
-		float x = Mathf.Cos(Random.Range(0,360)) * radius;
-		float y = Mathf.Sin(Random.Range(0,360)) * radius;
+		int angle = Random.Range(0,360);
+		float x = Mathf.Cos(angle) * radius;
+		float y = Mathf.Sin(angle) * radius;
 		return new Vector2 (x,y);
 	}
 }

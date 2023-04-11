@@ -8,6 +8,7 @@ TagManager:
   - hero
   - Undefined
   - monster
+  - orb
   layers:
   - Default
   - TransparentFX

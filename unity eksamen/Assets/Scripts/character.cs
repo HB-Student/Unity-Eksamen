@@ -46,6 +46,6 @@ public abstract class character : scanners, characterInterface
 
 	public void move()
 	{
-		transform.position = Vector2.MoveTowards(transform.position, target.transform.position, 0.01f + agility.totalStat() * 0.001f);
+		transform.position = Vector2.MoveTowards(transform.position, target.transform.position, 0.02f + agility.totalStat() * 0.002f);
 	}
 }

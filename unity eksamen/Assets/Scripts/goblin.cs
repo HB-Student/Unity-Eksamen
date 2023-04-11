@@ -11,7 +11,7 @@ public class goblin : monster
 		monsterType = "goblin";
 		health = 20;
 		sightRadius.baseStat = 4;
-		agility.baseStat = 1;
+		agility.baseStat = 3;
 	}
 	void Update()
 	{

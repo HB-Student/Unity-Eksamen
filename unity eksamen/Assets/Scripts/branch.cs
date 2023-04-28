@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public abstract class branch : MonoBehaviour
 {
     public List<Sprite> buttonImages;
-    public gameManager1 gameManager;
+    public gameManager gameManager;
     public GameObject buttonPrefab;
     public List<skill> skills = new List<skill>();
 
     public List<GameObject> buttons = new List<GameObject>();
 
     public void fakeStart(){
-        gameManager = GameObject.Find("GameManager").GetComponent<gameManager1>();
+        gameManager = GameObject.Find("GameManager").GetComponent<gameManager>();
         Debug.Log("gamemanager");
         for (int i = 0; i < skills.Count; i++)
         {   

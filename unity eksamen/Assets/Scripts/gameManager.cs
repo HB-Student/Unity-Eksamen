@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class gameManager : MonoBehaviour
 {
+	public levelSystem levelSys;
+    public levelsUI levelUI;
+    public orbOfLight orbOfLight;
 	public GameObject Wizard;
 	public GameObject Slime;
 	public GameObject Goblin;
@@ -34,11 +37,10 @@ public class gameManager : MonoBehaviour
 			default:
 				return;
 		}
-		GameObject monster = Instantiate(entity, randomAroundOrb(), Quaternion.identity);
+		GameObject monster = Instantiate(entity, randomAroundOrb(30), Quaternion.identity);
 		monster.transform.SetParent(GameObject.Find(monsterType).transform);
 	}
 
-	public int radius = 30;
 	void Start(){
 		spawnHero("wizard");
 		for (int i = 0; i < 6; i++)
@@ -47,11 +49,21 @@ public class gameManager : MonoBehaviour
 			spawnMonster("goblin");
 		}
 	}
-	Vector2 randomAroundOrb()
+	Vector2 randomAroundOrb(int radius)
 	{
 		int angle = Random.Range(0,360);
 		float x = Mathf.Cos(angle) * radius;
 		float y = Mathf.Sin(angle) * radius;
 		return new Vector2 (x,y);
 	}
+	    void Awake()
+    {
+        levelSys = new levelSystem();
+        levelUI.setLevelSystem(levelSys);
+        orbOfLight.setLevelSystem(levelSys);
+    }
+
+    public void addExp(int amount){
+        levelSys.addExp(amount);
+    }
 }

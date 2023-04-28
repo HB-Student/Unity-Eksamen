@@ -8,10 +8,17 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:unity eksamen/Assets/graphics/Circle.prefab
   - component: {fileID: 2557455596945633400}
   - component: {fileID: 2557455596945633401}
   m_Layer: 3
   m_Name: Circle
+=======
+  - component: {fileID: 2638527412492453554}
+  - component: {fileID: 8861974172589463079}
+  m_Layer: 0
+  m_Name: orbOfLigt
+>>>>>>> characters:unity eksamen/Assets/orbOfLigt.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,6 +92,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD:unity eksamen/Assets/graphics/Circle.prefab
 --- !u!1 &4853282693197211221
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,3 +228,5 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+=======
+>>>>>>> characters:unity eksamen/Assets/orbOfLigt.prefab

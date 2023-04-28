@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - button
+  - lootTable
+  - hero
+  - Undefined
+  - monster
+  - orb
+  - range
   layers:
   - Default
   - TransparentFX
@@ -41,4 +47,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2567329281
+    locked: 0
+  - name: Characters
+    uniqueID: 3052392733
     locked: 0

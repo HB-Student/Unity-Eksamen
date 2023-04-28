@@ -1,58 +1,100 @@
 @startuml
-class player{
+
+abstract class scanners{
+	sightRadius: stat
+	enemy: GameObject
+	bool scanBool()
+	List<GameObject> scanList()
 
 }
 
-class camera {
+interface characterInterface{
+	+void doSomething()
+	+void decide()
+}
+
+abstract class character {
+	enum action
+	doing: action
+	target: GameObject
+	hp: Integer
+	vitality: stat
+	strength: stat
+	agility: stat
+	abilityHaste: stat
+	cooldownOn: bool
+	abstract void decide()
+	abstract void doSomething()
+	void takeDamage()
+	IEnumerator damageVisual()
+	void characterStart()
+	void move()
+}
+
+class lootTable {
+	slimeDrops: List<GameObject>
+	slimeChances: List<Integer>
+	List<drop> getTable(String)
+}
+class drop {
+	dropChance: Integer
+	item: GameObject
+	drop(Integet, GameObject)
+}
+
+abstract class monster{
+	lootList: lootTable
+	monsterType: String
+	void monsterStart()
+	override void decide()
+	void monsterUpdate()
+	void dead()
+}
+
+class slime{
+	void Start()
+	void Update()
+	override void doSomething()
+	void chooseAttack()
+	IEnumerator dash()
 
 }
 
-abstract character {
-hp: Integer
-level: Integer
-strength: Integer
-defense: Integer
-abilityHaste: Integer
-void attack()
-void defend()
+abstract class hero{
+	mana: Integer
+	override void decide()
 }
 
-class hero{
-
-}
-
-class enemy{
-
-}
-
-abstract class branch{
-
-}
-
-class skills{
-
-}
 
 class wizard{
-
+	startTime: Float
+	projectile: GameObject
+	void Start()
+	void Update()
+	override void doSomething()
 }
 
-class bullet{
-
+class wizardBullet{
+	target: GameObject
+	speed: Integer
+	damage: Integer
 }
 
-class archerBranch{
-
+class stat{
+	baseStat: Integer
+	BonusStat: Integer
+	bonusPercentage: Integer
+	int totalStat()
 }
-abstract class ascan{
- +bool scanbool()   
-}
 
-character <|-- enemy
+character <|-- characterInterface
+character <|-- monster
 character <|-- hero
 hero <|-- wizard
-bullet "*"*.."1" character
-ascan <|-- character
-ascan <|-- bullet
-branch <|-- archerBranch
+monster <|-- slime
+wizardBullet "*"*.."1" character
+scanners <|-- character
+scanners <|-- wizardBullet
+
+
 @enduml

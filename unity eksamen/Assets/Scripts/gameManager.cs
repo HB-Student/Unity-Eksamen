@@ -9,6 +9,7 @@ public class gameManager : MonoBehaviour
 	public GameObject Wizard;
 	public GameObject Slime;
 	public GameObject Goblin;
+	public List<level> levels = new List<level>();
 	public void spawnHero(string heroType)
 	{
 		GameObject entity;
@@ -23,9 +24,9 @@ public class gameManager : MonoBehaviour
 		GameObject hero = Instantiate(entity, new Vector2(0, 0), Quaternion.identity);
 		hero.transform.SetParent(GameObject.Find(heroType).transform);
 	}
-	public void spawnMonster(string monsterType)
+	public void spawnMonster(string monsterType,int amount)
 	{
-		GameObject entity;
+				GameObject entity;
 		switch (monsterType)
 		{
 			case "slime":
@@ -37,17 +38,23 @@ public class gameManager : MonoBehaviour
 			default:
 				return;
 		}
+		for (int i = 0; i < amount; i++)
+		{
 		GameObject monster = Instantiate(entity, randomAroundOrb(30), Quaternion.identity);
 		monster.transform.SetParent(GameObject.Find(monsterType).transform);
+	}
 	}
 
 	void Start(){
 		spawnHero("wizard");
-		for (int i = 0; i < 6; i++)
-		{
-			spawnMonster("slime");
-			spawnMonster("goblin");
-		}
+		levels.Add(new level(12,2));
+		levels[0].startLevel();
+		//for (int i = 0; i < 6; i++)
+		//{
+		//	spawnMonster("slime");
+		//	spawnMonster("goblin");
+		//}
+
 	}
 	Vector2 randomAroundOrb(int radius)
 	{

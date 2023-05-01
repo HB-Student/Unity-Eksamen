@@ -16,7 +16,6 @@ public abstract class branch : MonoBehaviour
 
     public void fakeStart(){
         gameManager = GameObject.Find("GameManager").GetComponent<gameManager>();
-        Debug.Log("gamemanager");
         for (int i = 0; i < skills.Count; i++)
         {   
             int index = i;

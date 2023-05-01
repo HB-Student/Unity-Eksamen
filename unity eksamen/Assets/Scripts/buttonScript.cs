@@ -42,7 +42,4 @@ public class buttonScript : MonoBehaviour
         price=skill.price;
         }
 
-    public void print(){
-        Debug.Log("fhuehfueuh");
-    }
 }

@@ -12,7 +12,6 @@ public class characterManager : MonoBehaviour
 		foreach (Transform child in transform)
 		{
 			character character = child.GetComponent<character>();
-			Debug.Log(character.abilityHaste.totalStat());
 			switch (stat)
 			{
 				case "vitality":
@@ -38,8 +37,7 @@ public class characterManager : MonoBehaviour
 				default:
 					return;
 			}
-			Debug.Log(character.abilityHaste.totalStat());
-
+			child.GetComponent<Animation>().Play("heroLevelUp");
 		}
 	}
 	public void bonusPercentage(string stat, int difference)

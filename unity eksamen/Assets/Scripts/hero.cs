@@ -2,8 +2,7 @@ using UnityEngine;
 
 public abstract class hero : character
 {
-    public int mana;
-
+    private Animation levelUpAnim;
     public override void decide()
     {
         if (Vector2.Distance(transform.position, target.transform.position) <= 0.75f){
@@ -21,5 +20,8 @@ public abstract class hero : character
         {
             doing = action.Move;
         }
+    }
+    public override void dead(){
+        Destroy(gameObject);
     }
 }

@@ -30,13 +30,12 @@ public abstract class playerSkills
                 break;
             case "wizard1":
                 charMan.bonusStat("agility",5);
-				Debug.Log("Updated wizard 1");
                 break;
             case "wizard2":
-				Debug.Log("Updated wizard 2");
+                charMan.bonusStat("agility",5);
                 break;
             case "wizard3":
-				Debug.Log("Updated wizard 3");
+                charMan.bonusStat("agility",5);
                 break;
             case "orb":
 				Debug.Log("Updated orb ");

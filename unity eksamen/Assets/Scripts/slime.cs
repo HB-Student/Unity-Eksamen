@@ -63,7 +63,7 @@ public class slime : monster
 	{
 		float startTime = Time.time;
 		agility.bonusPercentage += 100;
-		yield return new WaitUntil(new Func<bool>(() => touchingHero || Time.time - startTime >= 3));
+		yield return new WaitUntil(new Func<bool>(() => touchingHero || Time.time - startTime >= 1));
 		if (Time.time - startTime <= 3)
 		{
 			startTime = Time.time;
@@ -71,7 +71,7 @@ public class slime : monster
 			List<GameObject> enemies = scanList("hero", 0.75f);
 			foreach (var enemy in enemies)
 			{
-				enemy.GetComponent<hero>().takeDamage(5);
+				enemy.GetComponent<hero>().takeDamage(10);
 			}
 			yield return new WaitUntil(new Func<bool>(() => Time.time - startTime >= 3 / (1 + 0.1f * abilityHaste.totalStat())));
 		}

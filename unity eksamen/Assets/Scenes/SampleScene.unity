@@ -1288,9 +1288,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4697742394870489252, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4697742394870489259, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697742395031383952, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4697742395505932484, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
       propertyPath: m_Parameters.m_EndRange
@@ -1299,6 +1307,18 @@ PrefabInstance:
     - target: {fileID: 4697742395505932484, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
       propertyPath: m_Parameters.m_GravityCurve.scalar
       value: 2.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697742395505932486, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697742395849569256, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697742395967167990, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4697742396763382204, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
       propertyPath: m_AnchorMax.x

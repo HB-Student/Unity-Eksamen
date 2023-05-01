@@ -9,6 +9,11 @@ public class gameManager : MonoBehaviour
 	public GameObject Wizard;
 	public GameObject Slime;
 	public GameObject Goblin;
+	public List<level> levels = new List<level>();
+	public gameState currentGamestate;
+	public gameLevelUI UiElement;
+	public level nextLevel;
+	public level currentLevel;
 	public void spawnHero(string heroType)
 	{
 		GameObject entity;
@@ -23,9 +28,9 @@ public class gameManager : MonoBehaviour
 		GameObject hero = Instantiate(entity, new Vector2(0, 0), Quaternion.identity);
 		hero.transform.SetParent(GameObject.Find(heroType).transform);
 	}
-	public void spawnMonster(string monsterType)
+	public void spawnMonster(string monsterType,int amount)
 	{
-		GameObject entity;
+				GameObject entity;
 		switch (monsterType)
 		{
 			case "slime":
@@ -37,18 +42,40 @@ public class gameManager : MonoBehaviour
 			default:
 				return;
 		}
+		for (int i = 0; i < amount; i++)
+		{
 		GameObject monster = Instantiate(entity, randomAroundOrb(30), Quaternion.identity);
+		monster.GetComponent<monster>().setLevel(currentLevel);
 		monster.transform.SetParent(GameObject.Find(monsterType).transform);
+	}
 	}
 
 	void Start(){
 		spawnHero("wizard");
-		for (int i = 0; i < 6; i++)
-		{
-			spawnMonster("slime");
-			spawnMonster("goblin");
+		spawnHero("wizard");
+		spawnHero("wizard");
+		spawnHero("wizard");
+
+		levels.Add(new level(1,100,1,1));
+		levels.Add(new level(2,120,1,2));
+		levels.Add(new level(3,130,2,1));
+		nextLevel=levels[0];
+	}
+
+	public void startNextLevel(){
+		if (nextLevel!=null){
+		currentLevel=nextLevel;
+		currentLevel.startLevel();
+		if(levels.Count-1>=levels.IndexOf(nextLevel)+1){
+		nextLevel=levels[levels.IndexOf(nextLevel)+1];
+		}else{
+			
+			nextLevel=null;
+		}
 		}
 	}
+
+
 	Vector2 randomAroundOrb(int radius)
 	{
 		int angle = Random.Range(0,360);
@@ -56,6 +83,7 @@ public class gameManager : MonoBehaviour
 		float y = Mathf.Sin(angle) * radius;
 		return new Vector2 (x,y);
 	}
+
 	    void Awake()
     {
         levelSys = new levelSystem();
@@ -66,4 +94,8 @@ public class gameManager : MonoBehaviour
     public void addExp(int amount){
         levelSys.addExp(amount);
     }
+	public enum gameState{
+		inPlay,
+		betweenPlay
+	}
 }

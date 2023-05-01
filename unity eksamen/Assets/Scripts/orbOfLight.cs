@@ -8,10 +8,14 @@ public class orbOfLight : MonoBehaviour
     public GameObject levelParticle;
     public GameObject eatParticle;
     public int currentHealth;
+    
+    public skillTree skilleTree; 
+    private Camera mainCam;
+    
     // Start is called before the first frame update
     void Start()
     {
-
+mainCam = Camera.main;
     }
 
     // Update is called once per frame
@@ -20,7 +24,28 @@ public class orbOfLight : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)){
             TakeDamage(1);
         }        
+    DetectObjectWithRaycast();
+
     }
+    // Start is called before the first frame update
+
+
+    public void DetectObjectWithRaycast()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mousePosition = mainCam.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+            if (hit.collider != null && hit.collider.gameObject == gameObject)
+            {
+                // perform actions on the clicked object here
+                if(gameObject.name=="OrbOfLight"){
+                    skilleTree.showTree();
+                }
+            }
+        }
+    }
+
     void TakeDamage(int damage){
         currentHealth-=damage;
         //healthbar.setHealth(currentHealth);

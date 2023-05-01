@@ -6,6 +6,7 @@ public abstract class monster : character
 	lootTable lootList;
 	public string monsterType;
 	private level level;
+	public int hitPoint;
 	public void monsterStart()
 	{
 		characterStart();
@@ -49,6 +50,17 @@ public abstract class monster : character
 		{
 			target.transform.position = new Vector2(0, 0);
 			doing = action.Move;
+		}
+	}
+
+    void OnTriggerEnter2D (Collider2D collision)
+	{
+	    // Check if the colliding object has a specific tag
+	    if (collision.gameObject.name=="damageZone")
+	    {
+	        // Do something when the moving object collides with the stationary object
+			collision.gameObject.transform.parent.GetComponent<orbOfLight>().TakeDamage(hitPoint);
+	    	this.dead();
 		}
 	}
 }

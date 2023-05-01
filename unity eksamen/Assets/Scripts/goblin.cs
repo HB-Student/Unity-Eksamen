@@ -8,6 +8,7 @@ public class goblin : monster
 	void Start()
 	{
 		monsterStart();
+		hitPoint=20;
 		monsterType = "goblin";
 		health = 20;
 		sightRadius.baseStat = 4;
@@ -33,4 +34,5 @@ public class goblin : monster
 				return;
 		}
 	}
+
 }

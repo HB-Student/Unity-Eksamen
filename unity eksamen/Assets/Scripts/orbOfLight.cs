@@ -8,26 +8,29 @@ public class orbOfLight : MonoBehaviour
     public GameObject levelParticle;
     public GameObject eatParticle;
     public int currentHealth;
-    
+    public int maxHealth;
     public skillTree skilleTree; 
     private Camera mainCam;
+    public HealtbarScript healthBar;
     
     // Start is called before the first frame update
     void Start()
     {
-mainCam = Camera.main;
+        mainCam = Camera.main;
+        maxHealth=1000; 
+        currentHealth=maxHealth;
+        healthBar.setMax(maxHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)){
-            TakeDamage(1);
+            TakeDamage(10);
         }        
-    DetectObjectWithRaycast();
+        DetectObjectWithRaycast();
 
     }
-    // Start is called before the first frame update
 
 
     public void DetectObjectWithRaycast()
@@ -39,18 +42,21 @@ mainCam = Camera.main;
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
                 // perform actions on the clicked object here
-                if(gameObject.name=="OrbOfLight"){
+                if(gameObject.name=="TheOrb"){
                     skilleTree.showTree();
                 }
             }
         }
     }
 
-    void TakeDamage(int damage){
+    public void TakeDamage(int damage){
         currentHealth-=damage;
+        Debug.Log(currentHealth);
+        healthBar.updateHealthBar(currentHealth);
         //healthbar.setHealth(currentHealth);
     }
 
+    
     public void setLevelSystem(levelSystem levelSystem){
         levelSys=levelSystem;
         levelSystem.onLevelChange+=levelSystem_onLevelChange;
@@ -74,4 +80,6 @@ mainCam = Camera.main;
         levelSys.addExp(amount);
         spawnParticleEffect(eatParticle);
     }
+
+
 }

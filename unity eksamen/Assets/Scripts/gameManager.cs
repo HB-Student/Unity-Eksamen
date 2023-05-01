@@ -5,6 +5,7 @@ public class gameManager : MonoBehaviour
 {
 	public levelSystem levelSys;
     public levelsUI levelUI;
+	public orbOfLight theOrb;
     public orbOfLight orbOfLight;
 	public GameObject Wizard;
 	public GameObject Slime;
@@ -25,9 +26,10 @@ public class gameManager : MonoBehaviour
 			default:
 				return;
 		}
-		GameObject hero = Instantiate(entity, new Vector2(0, 0), Quaternion.identity);
+		GameObject hero = Instantiate(entity, randomAroundOrb(3), Quaternion.identity);
 		hero.transform.SetParent(GameObject.Find(heroType).transform);
 	}
+
 	public void spawnMonster(string monsterType,int amount)
 	{
 				GameObject entity;

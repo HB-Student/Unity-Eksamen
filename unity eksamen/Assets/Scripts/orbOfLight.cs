@@ -57,7 +57,6 @@ public class orbOfLight : MonoBehaviour
 
     public void TakeDamage(int damage){
         currentHealth-=damage;
-        Debug.Log(currentHealth);
         healthBar.updateHealthBar(currentHealth);
         if(currentHealth<0){
             SceneManager.LoadScene(2);

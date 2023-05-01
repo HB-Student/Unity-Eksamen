@@ -33,7 +33,6 @@ gm = GameObject.Find("GameManager").GetComponent<gameManager>();
 
 
 public void startLevel(){
-    Debug.Log(levelNum);
     foreach (KeyValuePair<string, int> kvp in monsters)
     {
      gm.spawnMonster(kvp.Key, kvp.Value);   

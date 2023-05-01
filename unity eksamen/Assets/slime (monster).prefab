@@ -50,10 +50,14 @@ MonoBehaviour:
   enemy: {fileID: 0}
   doing: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
-  health: 1
+  health: 10
+  gm: {fileID: 0}
   cooldownOn: 0
+  healtbar: {fileID: 0}
   target: {fileID: 0}
   monsterType: 
+  hitPoint: 0
+  dropMoney: 1
   touchingHero: 0
 --- !u!212 &9037144304511003374
 SpriteRenderer:

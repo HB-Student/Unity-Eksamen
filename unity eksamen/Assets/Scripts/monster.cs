@@ -7,6 +7,7 @@ public abstract class monster : character
 	public string monsterType;
 	private level level;
 	public int hitPoint;
+	public int dropMoney;
 	public void monsterStart()
 	{
 		characterStart();
@@ -23,7 +24,7 @@ public abstract class monster : character
 	public void setLevel(level levelToSet){
 		level=levelToSet;
 	}
-	public void dead()
+	public override void dead()
 	{
 		//List<drop> drops = lootList.getTable(monsterType);
 		//foreach (var drop in drops)
@@ -34,6 +35,7 @@ public abstract class monster : character
 		//	}
 		//}
 		level.killMonster();
+		gm.addMoney(dropMoney);
 		Destroy(gameObject);
 	}
 	public override void decide()

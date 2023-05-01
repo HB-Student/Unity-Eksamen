@@ -19,15 +19,25 @@ public abstract class character : scanners, characterInterface
 	public stat strength = new stat("strength");
 	public stat agility = new stat("agility");
 	public stat abilityHaste = new stat("abilityHaste");
+	
+	public gameManager gm;
 	public bool cooldownOn = false;
 	public abstract void decide();
 	public abstract void doSomething();
-
+	public abstract void dead();
+	public HealtbarScript healtbar = null; 
 	public void takeDamage(int damage)
 	{
 		health -= damage;
+		if(health<=0){
+			this.dead();
+		}
+		if(healtbar!=null){
+		healtbar.updateHealthBar(health);
+		}
 		StartCoroutine(damageVisual());
 	}
+
 
 	IEnumerator damageVisual()
 	{
@@ -39,6 +49,10 @@ public abstract class character : scanners, characterInterface
 	public GameObject target;
 	public void characterStart()
 	{
+		gm=GameObject.Find("GameManager").GetComponent<gameManager>();
+		if(healtbar!=null){
+		healtbar.setMax(health);
+		}
 		Color originalColor = gameObject.GetComponent<SpriteRenderer>().color;
 		target = new GameObject("target");
 		target.transform.position = new Vector2(0,0);

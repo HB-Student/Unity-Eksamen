@@ -4,12 +4,13 @@ using UnityEngine;
 
 public abstract class playerSkills
 {
+
+    private characterManager charMan;
     public void updateSkills(string name)
     {
         switch (name)
         {
             case "archer":
-
                 Debug.Log("Updated archer");
                 break;
             case "archer1":
@@ -25,16 +26,16 @@ public abstract class playerSkills
 				Debug.Log("Updated archer 4");
                 break;    
             case "wizard":
-				Debug.Log("Updated wizard ");
+				charMan.bonusStat("abilityHaste",1);
                 break;
             case "wizard1":
-				Debug.Log("Updated wizard 1");
+                charMan.bonusStat("agility",5);
                 break;
             case "wizard2":
-				Debug.Log("Updated wizard 2");
+                charMan.bonusStat("agility",5);
                 break;
             case "wizard3":
-				Debug.Log("Updated wizard 3");
+                charMan.bonusStat("agility",5);
                 break;
             case "orb":
 				Debug.Log("Updated orb ");
@@ -51,5 +52,9 @@ public abstract class playerSkills
             default:
                 return;
         }
+    }
+
+    public void setCharMan(characterManager characterManager){
+        charMan=characterManager;
     }
 }

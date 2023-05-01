@@ -10,11 +10,13 @@ public class gameManager : MonoBehaviour
 	public GameObject Wizard;
 	public GameObject Slime;
 	public GameObject Goblin;
+	public Dictionary<string, int> prices=new Dictionary<string, int>();
 	public List<level> levels = new List<level>();
 	public gameState currentGamestate;
 	public gameLevelUI UiElement;
 	public level nextLevel;
 	public level currentLevel;
+	public int money;
 	public void spawnHero(string heroType)
 	{
 		GameObject entity;
@@ -30,6 +32,12 @@ public class gameManager : MonoBehaviour
 		hero.transform.SetParent(GameObject.Find(heroType).transform);
 	}
 
+	public void buyHero(string heroToBuy){
+		if(prices[heroToBuy]<=money){
+			spawnHero(heroToBuy);
+			money-=prices[heroToBuy];
+		}
+	}
 	public void spawnMonster(string monsterType,int amount)
 	{
 				GameObject entity;
@@ -52,16 +60,26 @@ public class gameManager : MonoBehaviour
 	}
 	}
 
+	public void addMoney(int amount){
+		money+=amount;
+	}
 	void Start(){
 		spawnHero("wizard");
 		spawnHero("wizard");
 		spawnHero("wizard");
 		spawnHero("wizard");
 
-		levels.Add(new level(1,1000,1,1));
-		levels.Add(new level(2,120,1,2));
+		levels.Add(new level(1,60,10,1));
+		levels.Add(new level(2,120,0,6));
 		levels.Add(new level(3,130,2,1));
+		levels.Add(new level(4,120,2,2));
+		levels.Add(new level(5,130,4,1));
+		levels.Add(new level(6,120,2,5));
+		levels.Add(new level(7,130,5,4));
 		nextLevel=levels[0];
+
+		money=0;
+		prices.Add("wizard",3);
 	}
 
 	public void startNextLevel(){

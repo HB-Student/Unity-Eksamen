@@ -36,4 +36,8 @@ public class buttonScript : MonoBehaviour
         skill.button = gameObject.GetComponent<Button>();
         price=skill.price;
         }
+
+    public void print(){
+        Debug.Log("fhuehfueuh");
+    }
 }

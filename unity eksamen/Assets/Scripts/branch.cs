@@ -21,7 +21,7 @@ public abstract class branch : MonoBehaviour
             GameObject newButton =Instantiate(buttonPrefab);
             buttons.Add(newButton);
             newButton.transform.SetParent(gameObject.transform);
-            newButton.GetComponent<buttonScript>().setSkillAndBranch(skills[i],this,index);            
+            newButton.GetComponent<buttonScript>().setSkillAndBranch(skills[index],this,index);   
             }
             createBtnOne();
     }

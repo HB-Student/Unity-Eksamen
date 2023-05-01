@@ -8,7 +8,6 @@ public class skillTree : MonoBehaviour
 
 
     public void showTree(){
-        Debug.Log("hej");
         skillTreePanel.SetActive(true);
     }
     public void hideTree(){

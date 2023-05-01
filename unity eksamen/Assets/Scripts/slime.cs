@@ -7,6 +7,7 @@ public class slime : monster
 {
 	void Start()
 	{
+		hitPoint=10;
 		monsterStart();
 		monsterType = "slime";
 		health = 10;

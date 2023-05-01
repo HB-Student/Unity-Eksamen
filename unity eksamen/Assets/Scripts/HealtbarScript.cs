@@ -11,7 +11,7 @@ public class HealtbarScript : MonoBehaviour
         slider.maxValue=max;
         slider.value=max;
     }
-    public void setHealth(int health){
+    public void updateHealthBar(int health){
         slider.value=health;
     }
 }

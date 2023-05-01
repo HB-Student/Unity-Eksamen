@@ -9,6 +9,8 @@ public abstract class branch : MonoBehaviour
     public gameManager gameManager;
     public GameObject buttonPrefab;
     public List<skill> skills = new List<skill>();
+    
+    public characterManager charMan;
 
     public List<GameObject> buttons = new List<GameObject>();
 
@@ -21,7 +23,8 @@ public abstract class branch : MonoBehaviour
             GameObject newButton =Instantiate(buttonPrefab);
             buttons.Add(newButton);
             newButton.transform.SetParent(gameObject.transform);
-            newButton.GetComponent<buttonScript>().setSkillAndBranch(skills[index],this,index);   
+            newButton.GetComponent<buttonScript>().setSkillAndBranch(skills[index],this,index);
+            skills[index].setCharMan(charMan);   
             }
             createBtnOne();
     }

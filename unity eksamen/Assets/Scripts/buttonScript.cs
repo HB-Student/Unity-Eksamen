@@ -7,19 +7,24 @@ public class buttonScript : MonoBehaviour
     public List<Sprite> images=new List<Sprite>();
     private string text;
     private int price;
-	public Text textComp;
-	public Text priceComp;
+	private Text textComp;
+	private Text priceComp;
 	
     skill skill;
     branch branch;
 
+
+    void Start(){
+        priceComp=GameObject.Find("Price").GetComponent<Text>();
+        textComp=GameObject.Find("Description").GetComponent<Text>();
+    }
     public void changeImg(int image){
         gameObject.GetComponent<Image>().sprite=images[image];
     }
 
     public void displayDescription(){
 		textComp.text=text;
-		priceComp.text=price.ToString();
+		priceComp.text="Price: "+price.ToString();
     }
     public void hideDescription(){
         textComp.text="";

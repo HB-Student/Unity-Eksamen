@@ -5,6 +5,7 @@ public abstract class monster : character
 {
 	lootTable lootList;
 	public string monsterType;
+	private level level;
 	public void monsterStart()
 	{
 		characterStart();
@@ -14,20 +15,24 @@ public abstract class monster : character
 	{
 		if (health <= 0 || scanBool("orb", 1))
 		{
-			Destroy(gameObject);
+			dead();
 		}
 	}
 
+	public void setLevel(level levelToSet){
+		level=levelToSet;
+	}
 	public void dead()
 	{
-		List<drop> drops = lootList.getTable(monsterType);
-		foreach (var drop in drops)
-		{
-			if (Random.Range(0, 100) <= drop.dropChance)
-			{
-				Instantiate(drop.item, gameObject.transform.position, Quaternion.identity);
-			}
-		}
+		//List<drop> drops = lootList.getTable(monsterType);
+		//foreach (var drop in drops)
+		//{
+		//	if (Random.Range(0, 100) <= drop.dropChance)
+		//	{
+		//		Instantiate(drop.item, gameObject.transform.position, Quaternion.identity);
+		//	}
+		//}
+		level.killMonster();
 		Destroy(gameObject);
 	}
 	public override void decide()

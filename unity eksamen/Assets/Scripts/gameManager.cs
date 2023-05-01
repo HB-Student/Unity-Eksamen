@@ -10,6 +10,10 @@ public class gameManager : MonoBehaviour
 	public GameObject Slime;
 	public GameObject Goblin;
 	public List<level> levels = new List<level>();
+	public gameState currentGamestate;
+	public gameLevelUI UiElement;
+	public level nextLevel;
+	public level currentLevel;
 	public void spawnHero(string heroType)
 	{
 		GameObject entity;
@@ -41,21 +45,26 @@ public class gameManager : MonoBehaviour
 		for (int i = 0; i < amount; i++)
 		{
 		GameObject monster = Instantiate(entity, randomAroundOrb(30), Quaternion.identity);
+		monster.GetComponent<monster>().setLevel(currentLevel);
 		monster.transform.SetParent(GameObject.Find(monsterType).transform);
 	}
 	}
 
 	void Start(){
 		spawnHero("wizard");
-		levels.Add(new level(12,2));
-		levels[0].startLevel();
-		//for (int i = 0; i < 6; i++)
-		//{
-		//	spawnMonster("slime");
-		//	spawnMonster("goblin");
-		//}
-
+		levels.Add(new level(1,1,1));
+		nextLevel=levels[0];
 	}
+
+	public void startNextLevel(){
+		currentLevel=nextLevel;
+		currentLevel.startLevel();
+		if(levels.Count-1>levels.IndexOf(nextLevel)+1){
+		nextLevel=levels[levels.IndexOf(nextLevel)+1];
+		}
+	}
+
+
 	Vector2 randomAroundOrb(int radius)
 	{
 		int angle = Random.Range(0,360);
@@ -73,4 +82,8 @@ public class gameManager : MonoBehaviour
     public void addExp(int amount){
         levelSys.addExp(amount);
     }
+	public enum gameState{
+		inPlay,
+		betweenPlay
+	}
 }

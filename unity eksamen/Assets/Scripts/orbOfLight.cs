@@ -42,7 +42,7 @@ public class orbOfLight : MonoBehaviour
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
                 // perform actions on the clicked object here
-                if(gameObject.name=="TheOrb"){
+                if(gameObject.name=="OrbOfLight"){
                     skilleTree.showTree();
                 }
             }

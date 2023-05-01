@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class orbOfLight : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class orbOfLight : MonoBehaviour
     void Start()
     {
         mainCam = Camera.main;
-        maxHealth=1000; 
+        maxHealth=50; 
         currentHealth=maxHealth;
         healthBar.setMax(maxHealth);
     }
@@ -38,21 +39,29 @@ public class orbOfLight : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePosition = mainCam.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-            if (hit.collider != null && hit.collider.gameObject == gameObject)
+            RaycastHit2D[] hit = Physics2D.RaycastAll(mousePosition, Vector2.zero);
+            foreach (var collider in hit)
+            {
+            if (collider != null)
             {
                 // perform actions on the clicked object here
-                if(gameObject.name=="OrbOfLight"){
+                if(collider.transform.name=="TheOrb"){
                     skilleTree.showTree();
                 }
+                
             }
+            
         }
+    }
     }
 
     public void TakeDamage(int damage){
         currentHealth-=damage;
         Debug.Log(currentHealth);
         healthBar.updateHealthBar(currentHealth);
+        if(currentHealth<0){
+            SceneManager.LoadScene(2);
+        }
         //healthbar.setHealth(currentHealth);
     }
 

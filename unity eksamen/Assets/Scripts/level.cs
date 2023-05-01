@@ -13,8 +13,11 @@ public Dictionary<string, int> monsters = new Dictionary<string, int>();
 public gameLevelUI UiElement;
 private int monstersLeft;
 
-public level(int num,int numSlime =0, int numGoblins=0){
+private int exp;
+
+public level(int num, int exp, int numSlime =0, int numGoblins=0){
     gameLevelState=levelState.before;
+    this.exp=exp;
     setGM();
     UiElement=gm.UiElement;
     levelNum=num;
@@ -30,6 +33,7 @@ gm = GameObject.Find("GameManager").GetComponent<gameManager>();
 
 
 public void startLevel(){
+    Debug.Log(levelNum);
     foreach (KeyValuePair<string, int> kvp in monsters)
     {
      gm.spawnMonster(kvp.Key, kvp.Value);   
@@ -40,6 +44,7 @@ public void startLevel(){
 
 public void endLevel(){
     gameLevelState=levelState.over;
+    gm.addExp(exp);
     UiElement.endLevel();
 }
 

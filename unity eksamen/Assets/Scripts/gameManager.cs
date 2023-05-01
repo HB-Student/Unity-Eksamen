@@ -52,15 +52,26 @@ public class gameManager : MonoBehaviour
 
 	void Start(){
 		spawnHero("wizard");
-		levels.Add(new level(1,1,1));
+		spawnHero("wizard");
+		spawnHero("wizard");
+		spawnHero("wizard");
+
+		levels.Add(new level(1,100,1,1));
+		levels.Add(new level(2,120,1,2));
+		levels.Add(new level(3,130,2,1));
 		nextLevel=levels[0];
 	}
 
 	public void startNextLevel(){
+		if (nextLevel!=null){
 		currentLevel=nextLevel;
 		currentLevel.startLevel();
-		if(levels.Count-1>levels.IndexOf(nextLevel)+1){
+		if(levels.Count-1>=levels.IndexOf(nextLevel)+1){
 		nextLevel=levels[levels.IndexOf(nextLevel)+1];
+		}else{
+			
+			nextLevel=null;
+		}
 		}
 	}
 
@@ -72,6 +83,7 @@ public class gameManager : MonoBehaviour
 		float y = Mathf.Sin(angle) * radius;
 		return new Vector2 (x,y);
 	}
+
 	    void Awake()
     {
         levelSys = new levelSystem();

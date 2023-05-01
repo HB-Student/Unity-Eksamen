@@ -10,14 +10,14 @@ public class environment : MonoBehaviour
 
 	void Start()
 	{
-		for (int x = -width; x < width; x += 10)
+		for (int x = -1*width; x < width; x += width/30)
 		{
-			for (int y = -height; y < height; y += 10)
+			for (int y = -1*height; y < height; y += width/30)
 			{
-				if (Mathf.PerlinNoise(x, y) > 0.6)
+				if (Random.Range(0,10) > 6)
 				{
-					GameObject spawn = plants[Random.Range(0, plants.Count)];
-					Instantiate(spawn, new Vector2(x, y), Quaternion.identity);
+					GameObject plant = plants[Random.Range(0, plants.Count)];
+					Instantiate(plant, new Vector2(x, y), Quaternion.identity);
 				}
 			}
 		}

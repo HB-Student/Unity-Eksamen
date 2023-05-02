@@ -258,6 +258,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   buttonPrefab: {fileID: 5412694254320020250, guid: 5f26dcf85f8ac1a4f8077b28aa39c962, type: 3}
   charMan: {fileID: 0}
+  orbScript: {fileID: 0}
   buttons: []
 --- !u!1 &7362967757801633736
 GameObject:
@@ -342,6 +343,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   buttonPrefab: {fileID: 5412694254320020250, guid: 5f26dcf85f8ac1a4f8077b28aa39c962, type: 3}
   charMan: {fileID: 0}
+  orbScript: {fileID: 0}
   buttons: []
 --- !u!1 &7362967757820580685
 GameObject:
@@ -715,6 +717,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   buttonPrefab: {fileID: 5412694254320020250, guid: 5f26dcf85f8ac1a4f8077b28aa39c962, type: 3}
   charMan: {fileID: 0}
+  orbScript: {fileID: 0}
   buttons: []
 --- !u!1 &8864171155807035478
 GameObject:

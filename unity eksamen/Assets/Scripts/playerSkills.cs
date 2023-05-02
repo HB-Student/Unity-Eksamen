@@ -6,6 +6,7 @@ public abstract class playerSkills
 {
 
     private characterManager charMan;
+    private killZone orbScript;
     public void updateSkills(string name)
     {
         switch (name)
@@ -29,22 +30,26 @@ public abstract class playerSkills
                 charMan.bonusStat("agility",5);
                 break;
             case "wizard2":
-                charMan.bonusStat("agility",5);
+                charMan.bonusStat("strength",1);
                 break;
             case "wizard3":
-                charMan.bonusStat("agility",5);
+                charMan.bonusStat("abilityHaste",3);
                 break;
             case "orb":
-				Debug.Log("Updated orb ");
+                orbScript.setActive(true);
+                orbScript.update();
                 break;
             case "orb1":
-				Debug.Log("Updated orb 1");
+				orbScript.setCooldownTime(1.0f);
+                orbScript.update();
                 break;
             case "orb2":
-				Debug.Log("Updated orb 2");
+				orbScript.setRange(4.0f);
+                orbScript.update();
                 break;
             case "orb3":
-				Debug.Log("Updated orb 3");
+				orbScript.setCooldownTime(0.7f);
+                orbScript.update();
                 break;
             default:
                 return;
@@ -53,5 +58,8 @@ public abstract class playerSkills
 
     public void setCharMan(characterManager characterManager){
         charMan=characterManager;
+    }
+    public void setOrb(killZone killZone){
+        orbScript = killZone;
     }
 }

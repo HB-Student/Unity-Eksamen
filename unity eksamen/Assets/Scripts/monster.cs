@@ -8,6 +8,7 @@ public abstract class monster : character
 	private level level;
 	public int hitPoint;
 	public int dropMoney;
+	 
 	public void monsterStart()
 	{
 		characterStart();
@@ -15,10 +16,7 @@ public abstract class monster : character
 	}
 	public void monsterUpdate()
 	{
-		if (health <= 0 || scanBool("orb", 1))
-		{
-			dead();
-		}
+
 	}
 
 	public void setLevel(level levelToSet){
@@ -35,7 +33,9 @@ public abstract class monster : character
 		//	}
 		//}
 		level.killMonster();
+		if(killed==true){
 		gm.addMoney(dropMoney);
+		}
 		Destroy(gameObject);
 	}
 	public override void decide()
@@ -62,7 +62,8 @@ public abstract class monster : character
 	    {
 	        // Do something when the moving object collides with the stationary object
 			collision.gameObject.transform.parent.GetComponent<orbOfLight>().TakeDamage(hitPoint);
-	    	this.dead();
+	    	killed=false;
+			this.dead();
 		}
 	}
 }

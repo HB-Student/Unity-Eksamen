@@ -17,6 +17,7 @@ public class gameManager : MonoBehaviour
 	public level nextLevel;
 	public level currentLevel;
 	public int money;
+	public buyMenu buyMenu;
 	public void spawnHero(string heroType)
 	{
 		GameObject entity;
@@ -33,11 +34,22 @@ public class gameManager : MonoBehaviour
 	}
 
 	public void buyHero(string heroToBuy){
-		if(prices[heroToBuy]<=money){
+		GameObject entity;
+		switch (heroToBuy)
+		{
+			case "wizard":
+				entity = Wizard;
+				break;
+			default:
+				return;
+		}
+		if(entity.GetComponent<hero>().price<=money){
 			spawnHero(heroToBuy);
-			money-=prices[heroToBuy];
+			money-=entity.GetComponent<hero>().price;
+			buyMenu.setMoney(money);
 		}
 	}
+
 	public void spawnMonster(string monsterType,int amount)
 	{
 				GameObject entity;
@@ -62,8 +74,10 @@ public class gameManager : MonoBehaviour
 
 	public void addMoney(int amount){
 		money+=amount;
+		buyMenu.setMoney(money);
 	}
 	void Start(){
+		buyMenu.setButtons(new List<hero>{Wizard.GetComponent<hero>()});
 		spawnHero("wizard");
 		spawnHero("wizard");
 		spawnHero("wizard");
@@ -79,7 +93,6 @@ public class gameManager : MonoBehaviour
 		nextLevel=levels[0];
 
 		money=0;
-		prices.Add("wizard",3);
 	}
 
 	public void startNextLevel(){

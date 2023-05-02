@@ -22,6 +22,7 @@ public abstract class character : scanners, characterInterface
 	
 	public gameManager gm;
 	public bool cooldownOn = false;
+	protected bool killed;
 	public abstract void decide();
 	public abstract void doSomething();
 	public abstract void dead();
@@ -30,6 +31,7 @@ public abstract class character : scanners, characterInterface
 	{
 		health -= damage;
 		if(health<=0){
+			killed=true;
 			this.dead();
 		}
 		if(healtbar!=null){

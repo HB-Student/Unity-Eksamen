@@ -216,6 +216,7 @@ MonoBehaviour:
   theOrb: {fileID: 0}
   orbOfLight: {fileID: 1864455264}
   Wizard: {fileID: 3739596878948285805, guid: 87e2d19339a2ca049878138c3380c992, type: 3}
+  Warrior: {fileID: 7994007121605690360, guid: c94e1c77f4435a54bac8f32354812900, type: 3}
   Slime: {fileID: 2898378095320298682, guid: e6b9ab1b84ee42746b784c5103b7778c, type: 3}
   Goblin: {fileID: 5163084904474007992, guid: ab55d716e49e2eb49931c83835d32846, type: 3}
   currentGamestate: 0
@@ -250,6 +251,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1750556148}
+  - {fileID: 1859011289}
   m_Father: {fileID: 1727087865}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -342,7 +344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8667041968045141119, guid: 47556c7ce55bd5a4b94db5b8b4c09ab7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 180.4
+      value: 132.9
       objectReference: {fileID: 0}
     - target: {fileID: 8667041968045141119, guid: 47556c7ce55bd5a4b94db5b8b4c09ab7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -946,7 +948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 4.128, y: 12.815, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 343, y: 164}
+  m_AnchoredPosition: {x: 349, y: 122}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &981279481
@@ -1095,7 +1097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -249.98, y: -179.43}
+  m_AnchoredPosition: {x: -249.98, y: -132.14}
   m_SizeDelta: {x: 300.0463, y: 90.8376}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1535977699
@@ -1483,6 +1485,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806610582}
   m_CullTransparentMesh: 1
+--- !u!1 &1859011288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1859011289}
+  - component: {fileID: 1859011290}
+  m_Layer: 0
+  m_Name: warrior
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1859011289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859011288}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 74252934}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1859011290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859011288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3aa174e77dd7045bee0d8453221460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1864455264 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4697742396932092338, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
@@ -1501,6 +1547,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 519126560}
     m_Modifications:
+    - target: {fileID: 155036927641512218, guid: cbd15ade29ee4c7489d245176f605fb2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 321
+      objectReference: {fileID: 0}
+    - target: {fileID: 155036927641512218, guid: cbd15ade29ee4c7489d245176f605fb2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -166
+      objectReference: {fileID: 0}
     - target: {fileID: 155036927641512219, guid: cbd15ade29ee4c7489d245176f605fb2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

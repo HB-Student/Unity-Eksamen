@@ -6,13 +6,13 @@ public abstract class character : scanners, characterInterface
 {
 	public enum action
 	{
-		Idle,
+		collect,
 		Move,
 		combat
 	}
 
 	public Dictionary<string, int> Stats = new Dictionary<string, int>();
-	public action doing = action.Idle;
+	public action doing;
 	public Color originalColor;
 	public int health;
 	public stat vitality = new stat("vitality");

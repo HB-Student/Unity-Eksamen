@@ -2,12 +2,19 @@ using UnityEngine;
 using UnityEngine.UI;
 public abstract class hero : character
 {
-    public int price;
-    public string text;
+	public int price;
+	public string text;
 	private Animation levelUpAnim;
 	public override void decide()
 	{
-		if (scanBool("monster", sightRadius.totalStat(), target.transform))
+		if (gameObject.transform.parent.name == "scavenger")
+		{
+			if (scanBool("resource", sightRadius.totalStat(), gameObject.transform))
+			{
+				doing = action.collect;
+			}
+		}
+		else if (scanBool("monster", sightRadius.totalStat(), target.transform))
 		{
 			doing = action.combat;
 

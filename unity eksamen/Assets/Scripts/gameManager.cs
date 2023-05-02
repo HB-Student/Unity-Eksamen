@@ -44,6 +44,9 @@ public class gameManager : MonoBehaviour
 			case "wizard":
 				entity = Wizard;
 				break;
+			case "warrior":
+				entity = Warrior;
+				break;
 			default:
 				return;
 		}
@@ -86,7 +89,7 @@ public class gameManager : MonoBehaviour
 			spawnHero("warrior");
 		}
 	
-		buyMenu.setButtons(new List<hero>{Wizard.GetComponent<hero>()});
+		buyMenu.setButtons(new List<hero>{Wizard.GetComponent<hero>(),Warrior.GetComponent<hero>()});
 		levels.Add(new level(1,60,10,1));
 		levels.Add(new level(2,120,0,6));
 		levels.Add(new level(3,130,2,1));

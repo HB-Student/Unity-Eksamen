@@ -10,14 +10,15 @@ public class environment : MonoBehaviour
 
 	void Start()
 	{
-		for (int x = -1*width; x < width; x += width/30)
+		for (int x = -1 * width; x < width; x += width / 30)
 		{
-			for (int y = -1*height; y < height; y += width/30)
+			for (int y = -1 * height; y < height; y += width / 30)
 			{
-				if (Random.Range(0,10) > 6)
+				if (Random.Range(0, 10) > 6)
 				{
 					GameObject plant = plants[Random.Range(0, plants.Count)];
-					Instantiate(plant, new Vector2(x, y), Quaternion.identity);
+					GameObject plantClone = Instantiate(plant, new Vector2(x, y), Quaternion.identity);
+					plantClone.transform.parent = gameObject.transform;
 				}
 			}
 		}

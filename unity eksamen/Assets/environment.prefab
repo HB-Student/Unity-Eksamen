@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plants:
   - {fileID: 6382379849654782673, guid: 3a2101efffa57444ea6d0d73a0940ba2, type: 3}
+  - {fileID: 3597502060113733425, guid: 2bb74e07e0bf19a4f8f8f7b12e264ae0, type: 3}
+  - {fileID: 309329064982723464, guid: 83f79166a3f5543489b3104c00280742, type: 3}

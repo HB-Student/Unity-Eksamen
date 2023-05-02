@@ -84,15 +84,15 @@ public class gameManager : MonoBehaviour
 		buyMenu.setMoney(money);
 	}
 	void Start(){
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 2; i++)
 		{
 			spawnHero("warrior");
 			spawnHero("wizard");
 		}
 	
 		buyMenu.setButtons(new List<hero>{Wizard.GetComponent<hero>(),Warrior.GetComponent<hero>()});
-		levels.Add(new level(1,1000,4,2));
-		levels.Add(new level(2,120,3,4));
+		levels.Add(new level(1,80,3,2));
+		levels.Add(new level(2,120,3,2));
 		levels.Add(new level(3,150,5,4));
 		levels.Add(new level(4,200,10,0));
 		levels.Add(new level(5,180,0,10));

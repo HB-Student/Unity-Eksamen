@@ -11,6 +11,7 @@ public abstract class branch : MonoBehaviour
     public List<skill> skills = new List<skill>();
     
     public characterManager charMan;
+    public killZone orbScript;
 
     public List<GameObject> buttons = new List<GameObject>();
 
@@ -24,6 +25,7 @@ public abstract class branch : MonoBehaviour
             newButton.transform.SetParent(gameObject.transform);
             newButton.GetComponent<buttonScript>().setSkillAndBranch(skills[index],this,index);
             skills[index].setCharMan(charMan);   
+            skills[index].setOrb(orbScript);   
             }
             createBtnOne();
     }

@@ -13,10 +13,10 @@ public class wizardBranch : branch
     // Start is called before the first frame update
     void Start()
     {
-        wizard4 = new skill(4, "wizard3", "You can now make sacrifices");
-        wizard3 = new skill(3, "wizard2", new List<skill>() { wizard4 }, "Add additinal 2x to exp earned by sacrifices");
-        wizard2 = new skill(2, "wizard1", new List<skill>() { wizard3 }, "The orb can now shot lightning");
-        wizard1 = new skill(1, "wizard", new List<skill>() { wizard2 }, "Add additinal 3x to exp earned by orb"); wizard1.buyable = true;
+        wizard4 = new skill(4, "wizard3","Add 3 abilityHaste");
+        wizard3 = new skill(3, "wizard2", new List<skill>() { wizard4 }, "Add 1 to strength");
+        wizard2 = new skill(2, "wizard1", new List<skill>() { wizard3 }, "Add 5 to agility");
+        wizard1 = new skill(1, "wizard", new List<skill>() { wizard2 },  "Add 1 to abilityHaste"); wizard1.buyable = true;
         skills.Add(wizard1);
         skills.Add(wizard2);
         skills.Add(wizard3);

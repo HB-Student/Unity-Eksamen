@@ -5619,6 +5619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4697742395849569257}
   - component: {fileID: 4697742395849569262}
+  - component: {fileID: 5735955475717989709}
   m_Layer: 0
   m_Name: killZone
   m_TagString: Untagged
@@ -5656,7 +5657,21 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.99
+  m_Radius: 3
+--- !u!114 &5735955475717989709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697742395849569256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932783eeb53f2194ba606db124291fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 0}
+  lineWidth: 0.1
 --- !u!1 &4697742395967167985
 GameObject:
   m_ObjectHideFlags: 0
@@ -5955,6 +5970,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4697742396932092301}
   - component: {fileID: 4697742396932092338}
+  - component: {fileID: 431330255719275069}
   m_Layer: 0
   m_Name: OrbOfLight
   m_TagString: Untagged
@@ -6001,3 +6017,19 @@ MonoBehaviour:
   maxHealth: 0
   skilleTree: {fileID: 0}
   healthBar: {fileID: 4697742395665622699}
+--- !u!111 &431330255719275069
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697742396932092300}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 29fb088edb900744dbdbc1913025cc5e, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 29fb088edb900744dbdbc1913025cc5e, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

@@ -67,7 +67,7 @@ public class slime : monster
 		{
 			startTime = Time.time;
 			agility.bonusPercentage = -100;
-			List<GameObject> enemies = scanList("hero", 0.75f);
+			List<GameObject> enemies = scanList("hero", 0.75f,transform);
 			foreach (var enemy in enemies)
 			{
 				enemy.GetComponent<hero>().takeDamage(strength.totalStat());

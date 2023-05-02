@@ -7,9 +7,9 @@ public abstract class scanners : MonoBehaviour
 	public stat sightRadius = new stat("sightRadius");
 	public GameObject enemy;
 
-	public bool scanBool(string opponentTag, float colliderRadius)
+	public bool scanBool(string opponentTag, float colliderRadius, Transform scanMiddle)
 	{
-		List<GameObject> enemies = scanList(opponentTag, colliderRadius);
+		List<GameObject> enemies = scanList(opponentTag, colliderRadius,scanMiddle);
 		if (enemies.Count > 0)
 		{
 			GameObject closestEnemy = enemies[0];
@@ -32,9 +32,9 @@ public abstract class scanners : MonoBehaviour
 		}
 	}
 
-	public List<GameObject> scanList(string scanningTag, float colliderRadius)
+	public List<GameObject> scanList(string scanningTag, float colliderRadius, Transform scanMiddle)
 	{
-		Collider2D[] overlapCollider = Physics2D.OverlapCircleAll(transform.position, colliderRadius);
+		Collider2D[] overlapCollider = Physics2D.OverlapCircleAll(scanMiddle.position, colliderRadius);
 		List<GameObject> enemies = new List<GameObject>();
 		for (int i = 0; i < overlapCollider.Length; i++)
 		{

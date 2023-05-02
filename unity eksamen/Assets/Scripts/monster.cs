@@ -15,7 +15,7 @@ public abstract class monster : character
 	}
 	public void monsterUpdate()
 	{
-		if (health <= 0 || scanBool("orb", 1))
+		if (health <= 0 || scanBool("orb", 1,transform))
 		{
 			dead();
 		}
@@ -44,7 +44,7 @@ public abstract class monster : character
 		{
 			target.transform.position = transform.position;
 		}
-		if (scanBool("hero", sightRadius.totalStat()))
+		if (scanBool("hero", sightRadius.totalStat(),transform))
 		{
 			doing = action.combat;
 		}

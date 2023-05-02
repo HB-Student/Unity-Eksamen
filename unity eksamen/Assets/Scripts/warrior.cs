@@ -6,7 +6,7 @@ public class warrior : hero
 	float startTime;
 	void Start()
 	{
-		health = 100;
+		health = 10;
 		characterStart();
 		sightRadius.baseStat = 6;
 	}
@@ -41,7 +41,7 @@ public class warrior : hero
 	}
 	IEnumerator attack()
 	{
-		if (scanList("monster", 1f).Count > 0)
+		if (scanList("monster", 1f,transform).Count > 0)
 		{
 			enemy.GetComponent<monster>().takeDamage(strength.totalStat());
 			yield return new WaitForSeconds(2 / (1 + 0.1f * abilityHaste.totalStat()));

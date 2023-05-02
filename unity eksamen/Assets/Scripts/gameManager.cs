@@ -90,7 +90,7 @@ public class gameManager : MonoBehaviour
 		}
 	
 		buyMenu.setButtons(new List<hero>{Wizard.GetComponent<hero>(),Warrior.GetComponent<hero>()});
-		levels.Add(new level(1,60,10,1));
+		levels.Add(new level(1,10000,10,1));
 		levels.Add(new level(2,120,0,6));
 		levels.Add(new level(3,130,2,1));
 		levels.Add(new level(4,120,2,2));

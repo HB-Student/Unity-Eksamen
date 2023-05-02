@@ -3,6 +3,7 @@ using UnityEngine.UI;
 public abstract class hero : character
 {
     public int price;
+	public Sprite img;
     public string text;
 	private Animation levelUpAnim;
 	public override void decide()

@@ -10,21 +10,18 @@ public abstract class playerSkills
     {
         switch (name)
         {
-            case "archer":
-                Debug.Log("Updated archer");
+            case "warrior":
+                charMan.bonusStat("abilityHaste",1);
                 break;
-            case "archer1":
-				Debug.Log("Updated archer 1");
+            case "warrior1":
+                charMan.bonusStat("abilityHaste",1);
                 break;
-            case "archer2":
-				Debug.Log("Updated archer 2");
+            case "warrior2":
+				charMan.bonusStat("agility",10);
                 break;
-            case "archer3":
-				Debug.Log("Updated archer 3");
-                break;
-            case "archer4":
-				Debug.Log("Updated archer 4");
-                break;    
+            case "warrior3":
+				charMan.bonusStat("strength",10);
+                break;   
             case "wizard":
 				charMan.bonusStat("abilityHaste",1);
                 break;

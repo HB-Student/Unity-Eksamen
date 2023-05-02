@@ -22,7 +22,9 @@ public void setHero(hero hero){
     this.hero=hero;
     this.price=hero.price.ToString();
     this.text=hero.text;
+    Debug.Log(hero.name);
     gameObject.GetComponent<Button>().onClick.AddListener(() => this.buyHero(hero.name));
+
     EventTrigger trigger = gameObject.GetComponent<EventTrigger>();
     if (trigger == null)
     {
@@ -55,15 +57,20 @@ public void displayDescription(){
     }
 
 public void buyHero(string ts){
+    Debug.Log(ts);
     string heroToBuy;
     switch (ts)
 		{
 			case "wizard (hero)":
 				heroToBuy = "wizard";
 				break;
+            case "warrior (hero)":
+				heroToBuy = "warrior";
+				break;
 			default:
 				return;
 		}
+    Debug.Log(heroToBuy);
     GameObject.Find("GameManager").GetComponent<gameManager>().buyHero(heroToBuy);
 }
 }

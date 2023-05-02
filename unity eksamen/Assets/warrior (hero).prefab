@@ -107,6 +107,8 @@ MonoBehaviour:
   cooldownOn: 0
   healtbar: {fileID: 0}
   target: {fileID: 0}
+  price: 1
+  text: The warror is quick with a low range
 --- !u!61 &1152661491157936120
 BoxCollider2D:
   m_ObjectHideFlags: 0

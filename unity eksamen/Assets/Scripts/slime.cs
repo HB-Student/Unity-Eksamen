@@ -10,7 +10,7 @@ public class slime : monster
 		hitPoint=10;
 		monsterStart();
 		monsterType = "slime";
-		health = 10;
+		health = 3;
 		sightRadius.baseStat = 4;
 	}
 	void Update()
@@ -27,7 +27,6 @@ public class slime : monster
 				move();
 				break;
 			case action.combat:
-				target.transform.position = enemy.transform.position;
 				if (!cooldownOn)
 				{
 					cooldownOn = true;
@@ -35,7 +34,7 @@ public class slime : monster
 				}
 				else
 				{
-					move();
+					moveToEnemy();
 				}
 				break;
 
@@ -68,10 +67,10 @@ public class slime : monster
 		{
 			startTime = Time.time;
 			agility.bonusPercentage = -100;
-			List<GameObject> enemies = scanList("hero", 0.75f);
+			List<GameObject> enemies = scanList("hero", 0.75f,transform);
 			foreach (var enemy in enemies)
 			{
-				enemy.GetComponent<hero>().takeDamage(10);
+				enemy.GetComponent<hero>().takeDamage(strength.totalStat());
 			}
 			yield return new WaitUntil(new Func<bool>(() => Time.time - startTime >= 3 / (1 + 0.1f * abilityHaste.totalStat())));
 		}

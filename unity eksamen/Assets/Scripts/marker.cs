@@ -46,11 +46,20 @@ public class marker : MonoBehaviour
 		{
 			foreach (var hero in controllingList)
 			{
-				for (int i = 0; i < hero.transform.childCount; i++)
+				GameObject rangeParent;
+				if (hero.transform.parent.name == "warrior")
 				{
-					if (hero.transform.GetChild(i).tag == "range")
+					rangeParent = hero.GetComponent<character>().target;
+				}
+				else
+				{
+					rangeParent = hero;
+				}
+				for (int i = 0; i < rangeParent.transform.childCount; i++)
+				{
+					if (rangeParent.transform.GetChild(i).tag == "range")
 					{
-						Destroy(hero.transform.GetChild(i).gameObject);
+						Destroy(rangeParent.transform.GetChild(i).gameObject);
 					}
 				}
 			}
@@ -58,7 +67,16 @@ public class marker : MonoBehaviour
 		controllingList = scanList("hero", gameObject);
 		foreach (var hero in controllingList)
 		{
-			GameObject rangeClone = Instantiate(rangeVFX, hero.transform);
+			Transform attackArea;
+			if (hero.transform.parent.name == "warrior")
+			{
+				attackArea = hero.GetComponent<character>().target.transform;
+			}
+			else
+			{
+				attackArea = hero.transform;
+			}
+			GameObject rangeClone = Instantiate(rangeVFX, attackArea);
 			int scale = 2 * hero.GetComponent<hero>().sightRadius.totalStat();
 			rangeClone.transform.localScale = new Vector2(scale, scale);
 		}

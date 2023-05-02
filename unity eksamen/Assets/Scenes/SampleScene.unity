@@ -216,6 +216,7 @@ MonoBehaviour:
   theOrb: {fileID: 0}
   orbOfLight: {fileID: 1864455264}
   Wizard: {fileID: 3739596878948285805, guid: 87e2d19339a2ca049878138c3380c992, type: 3}
+  Warrior: {fileID: 7994007121605690360, guid: c94e1c77f4435a54bac8f32354812900, type: 3}
   Slime: {fileID: 2898378095320298682, guid: e6b9ab1b84ee42746b784c5103b7778c, type: 3}
   Goblin: {fileID: 5163084904474007992, guid: ab55d716e49e2eb49931c83835d32846, type: 3}
   currentGamestate: 0
@@ -251,6 +252,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1750556148}
+  - {fileID: 1859011289}
   m_Father: {fileID: 1727087865}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1174,6 +1176,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 519126560}
     m_Modifications:
+    - target: {fileID: 155036927641512218, guid: cbd15ade29ee4c7489d245176f605fb2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 321
+      objectReference: {fileID: 0}
+    - target: {fileID: 155036927641512218, guid: cbd15ade29ee4c7489d245176f605fb2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -166
+      objectReference: {fileID: 0}
     - target: {fileID: 155036927641512219, guid: cbd15ade29ee4c7489d245176f605fb2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

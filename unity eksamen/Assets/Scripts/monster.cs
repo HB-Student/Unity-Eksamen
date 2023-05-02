@@ -44,7 +44,7 @@ public abstract class monster : character
 		{
 			target.transform.position = transform.position;
 		}
-		if (scanBool("hero", sightRadius.totalStat()))
+		if (scanBool("hero", sightRadius.totalStat(),transform))
 		{
 			doing = action.combat;
 		}

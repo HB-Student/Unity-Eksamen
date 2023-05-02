@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class wizard : hero
+public class warrior : hero
 {
 	float startTime;
-	public GameObject projectile;
 	void Start()
 	{
 		health = 10;
@@ -28,7 +27,11 @@ public class wizard : hero
 				if (!cooldownOn)
 				{
 					cooldownOn = true;
-					StartCoroutine(magicBall());
+					StartCoroutine(attack());
+				}
+				else
+				{
+					moveToEnemy();
 				}
 				break;
 
@@ -36,13 +39,17 @@ public class wizard : hero
 				return;
 		}
 	}
-	IEnumerator magicBall()
+	IEnumerator attack()
 	{
-		GameObject magicBall = Instantiate(projectile, transform.position, Quaternion.identity);
-		magicBall.GetComponent<wizardBullet>().target = enemy;
-		magicBall.GetComponent<wizardBullet>().damage = strength.totalStat();
-		yield return new WaitForSeconds(3 / (1 + 0.1f * abilityHaste.totalStat()));
-
+		if (scanList("monster", 1f,transform).Count > 0)
+		{
+			enemy.GetComponent<monster>().takeDamage(strength.totalStat());
+			yield return new WaitForSeconds(2 / (1 + 0.1f * abilityHaste.totalStat()));
+		}
+		else
+		{
+			moveToEnemy();
+		}
 		cooldownOn = false;
 	}
 }

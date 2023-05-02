@@ -803,6 +803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: skillTreeManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7362967757740696674, guid: d32a4433f7eb415418b63d72d086cace, type: 3}
+      propertyPath: charMan
+      value: 
+      objectReference: {fileID: 1263435050}
     - target: {fileID: 7362967758805728263, guid: d32a4433f7eb415418b63d72d086cace, type: 3}
       propertyPath: charMan
       value: 

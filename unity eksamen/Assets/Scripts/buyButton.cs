@@ -22,7 +22,6 @@ public void setHero(hero hero){
     this.hero=hero;
     this.price=hero.price.ToString();
     this.text=hero.text;
-    Debug.Log(hero.name);
     gameObject.GetComponent<Button>().onClick.AddListener(() => this.buyHero(hero.name));
 
     EventTrigger trigger = gameObject.GetComponent<EventTrigger>();
@@ -45,6 +44,7 @@ public void setHero(hero hero){
     // Add the entry to the EventTrigger component
     trigger.triggers.Add(entry);
 
+    gameObject.GetComponent<Image>().sprite=hero.img;
 }
 
 public void displayDescription(){
@@ -57,7 +57,6 @@ public void displayDescription(){
     }
 
 public void buyHero(string ts){
-    Debug.Log(ts);
     string heroToBuy;
     switch (ts)
 		{
@@ -70,7 +69,6 @@ public void buyHero(string ts){
 			default:
 				return;
 		}
-    Debug.Log(heroToBuy);
     GameObject.Find("GameManager").GetComponent<gameManager>().buyHero(heroToBuy);
 }
 }

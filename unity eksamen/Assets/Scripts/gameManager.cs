@@ -8,6 +8,7 @@ public class gameManager : MonoBehaviour
 	public orbOfLight theOrb;
     public orbOfLight orbOfLight;
 	public GameObject Wizard;
+	public GameObject Warrior;
 	public GameObject Slime;
 	public GameObject Goblin;
 	public Dictionary<string, int> prices=new Dictionary<string, int>();
@@ -24,6 +25,9 @@ public class gameManager : MonoBehaviour
 		{
 			case "wizard":
 				entity = Wizard;
+				break;
+			case "warrior":
+				entity = Warrior;
 				break;
 			default:
 				return;
@@ -64,11 +68,11 @@ public class gameManager : MonoBehaviour
 		money+=amount;
 	}
 	void Start(){
-		spawnHero("wizard");
-		spawnHero("wizard");
-		spawnHero("wizard");
-		spawnHero("wizard");
-
+		for (int i = 0; i < 6; i++)
+		{
+			spawnHero("warrior");
+		}
+	
 		levels.Add(new level(1,60,10,1));
 		levels.Add(new level(2,120,0,6));
 		levels.Add(new level(3,130,2,1));

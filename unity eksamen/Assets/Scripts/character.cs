@@ -62,4 +62,10 @@ public abstract class character : scanners, characterInterface
 	{
 		transform.position = Vector2.MoveTowards(transform.position, target.transform.position, 0.02f + agility.totalStat() * 0.002f);
 	}
+	public void moveToEnemy()
+	{
+		if(Vector2.Distance(transform.position, enemy.transform.position) > 0.75f){
+			transform.position = Vector2.MoveTowards(transform.position, enemy.transform.position, 0.02f + agility.totalStat() * 0.002f);
+		}
+	}
 }

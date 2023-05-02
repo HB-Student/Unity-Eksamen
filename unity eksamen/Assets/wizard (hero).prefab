@@ -237,6 +237,8 @@ MonoBehaviour:
   cooldownOn: 0
   healtbar: {fileID: 3439194212044987893}
   target: {fileID: 0}
+  price: 3
+  text: The wizard fires powerfull balls of fire.
   projectile: {fileID: 2765945506480078540, guid: f14239c204cb2aa45b3cb40154af76e1, type: 3}
 --- !u!212 &1768379373289990530
 SpriteRenderer:

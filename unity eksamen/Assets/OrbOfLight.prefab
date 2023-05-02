@@ -206,7 +206,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0.82
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4896,7 +4896,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.74
+  m_Radius: 0.52
 --- !u!1 &4697742395206815377
 GameObject:
   m_ObjectHideFlags: 0
@@ -5021,7 +5021,7 @@ ParticleSystemForceField:
   m_Parameters:
     m_Shape: 0
     m_StartRange: 0
-    m_EndRange: 10
+    m_EndRange: 1.5354186
     m_Length: 1
     m_GravityFocus: 0
     m_RotationRandomness: {x: 0, y: 0}
@@ -5187,7 +5187,7 @@ ParticleSystemForceField:
     m_GravityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2.76
       minScalar: 1
       maxCurve:
         serializedVersion: 2

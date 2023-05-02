@@ -17,10 +17,10 @@ public abstract class playerSkills
                 charMan.bonusStat("abilityHaste",1);
                 break;
             case "warrior2":
-				charMan.bonusStat("agility",10);
+				charMan.bonusPercentage("agility",50);
                 break;
             case "warrior3":
-				charMan.bonusStat("strength",10);
+				charMan.bonusPercentage("strength",50);
                 break;   
             case "wizard":
 				charMan.bonusStat("abilityHaste",1);

@@ -5,6 +5,7 @@ public class scavenger : hero
 {
 	float startTime;
 	bool holdingLoot = false;
+	int holdingValue = 0;
 	void Start()
 	{
 		health = 10;
@@ -21,9 +22,10 @@ public class scavenger : hero
 		if (holdingLoot)
 		{
 			float dist = Vector2.Distance(transform.position, new Vector2(0, 0));
-			if (dist <= 2.5f)
+			if (scanBool("orb",1f,gameObject.transform))
 			{
-				gm.addMoney(1);
+				gm.addMoney(holdingValue);
+                holdingValue = 0;
                 holdingLoot = false;
 			}
 			else
@@ -33,25 +35,29 @@ public class scavenger : hero
 			}
 			return;
 		}
-		switch (doing)
+		else
 		{
-			case action.Move:
-				move();
-				break;
-			case action.collect:
-				float space = (float)1.14f * 0.5f * (transform.localScale.x + enemy.transform.localScale.x);
-				if (Vector2.Distance(transform.position, enemy.transform.position) <= space)
-				{
-					Destroy(enemy);
-					holdingLoot = true;
-				}
-				else
-				{
-					moveToEnemy();
-				}
-				break;
-			default:
-				return;
+			switch (doing)
+			{
+				case action.Move:
+					move();
+					break;
+				case action.collect:
+					float space = (float)1.14f * 0.5f * (transform.localScale.x + enemy.transform.localScale.x);
+					if (Vector2.Distance(transform.position, enemy.transform.position) <= space)
+					{
+                        holdingValue = enemy.GetComponent<drop>().value;
+						holdingLoot = true;
+						Destroy(enemy);
+					}
+					else
+					{
+						moveToEnemy();
+					}
+					break;
+				default:
+					return;
 		}
+        }
 	}
 }

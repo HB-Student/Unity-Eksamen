@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class drop
+public class drop : MonoBehaviour
 {
     public int dropChance;
-    public GameObject item;
-    public drop(int c, GameObject d)
+    public int value;
+    public drop(int c, int v)
     {
         dropChance = c;
-        item = d;
+        value = v;
     }
 }

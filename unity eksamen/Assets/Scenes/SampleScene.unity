@@ -1375,6 +1375,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4697742395967167985, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
+      propertyPath: m_TagString
+      value: orb
+      objectReference: {fileID: 0}
+    - target: {fileID: 4697742395967167988, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4697742396763382204, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1545,22 +1553,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: lootTable
       objectReference: {fileID: 0}
-    - target: {fileID: 3634087548874624500, guid: aee3120fd4b2cc84199214f28562c416, type: 3}
-      propertyPath: slimeDrops.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3634087548874624500, guid: aee3120fd4b2cc84199214f28562c416, type: 3}
-      propertyPath: goblinDrops.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3634087548874624500, guid: aee3120fd4b2cc84199214f28562c416, type: 3}
-      propertyPath: goblinChances.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3634087548874624500, guid: aee3120fd4b2cc84199214f28562c416, type: 3}
-      propertyPath: slimeDrops.Array.data[0]
-      value: 
-      objectReference: {fileID: 3565565311709375667, guid: dbb5f0b86844ab849922ac44a05047d9, type: 3}
     - target: {fileID: 6150540401506706201, guid: aee3120fd4b2cc84199214f28562c416, type: 3}
       propertyPath: m_RootOrder
       value: 0

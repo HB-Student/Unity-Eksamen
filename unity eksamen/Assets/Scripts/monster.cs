@@ -26,12 +26,16 @@ public abstract class monster : character
 	{
 		level.killMonster();
 		if(killed==true){
-            List<drop> drops = lootList.getTable(monsterType);
+            List<GameObject> drops = lootList.getTable(monsterType);
             foreach (var drop in drops)
             {
-                if (Random.Range(0, 100) <= drop.dropChance)
+                if (Random.Range(0, 100) <= drop.GetComponent<drop>().dropChance)
                 {
-                    Instantiate(drop.item, gameObject.transform.position, Quaternion.identity);
+                    int angle = Random.Range(0, 360);
+                    float x = Mathf.Cos(angle);
+                    float y = Mathf.Sin(angle);
+
+                    Instantiate(drop, gameObject.transform.position + new Vector3(x, y, 0), Quaternion.identity);
                 }
             }
 		}

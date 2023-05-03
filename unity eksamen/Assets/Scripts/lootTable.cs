@@ -5,19 +5,21 @@ using UnityEngine;
 public class lootTable : MonoBehaviour
 {
     public List<GameObject> slimeDrops = new List<GameObject>();
-
-    public List<GameObject> goblinDrops = new List<GameObject>();
+    public List<int> slimeChances = new List<int>();
     
-    public List<GameObject> getTable(string type)
+    public List<drop> getTable(string type)
     {
+        List<drop> loot = new List<drop>();
         switch (type)
         {
             case "slime":
-                return slimeDrops;
-            case "goblin":
-                return goblinDrops;
+                for (int i = 0; i < slimeChances.Count; i++)
+                {
+                    loot.Add(new drop(slimeChances[i], slimeDrops[i]));
+                }
+                return loot;
             default:
-                return new List<GameObject>();
+                return loot;
         }
     }
 }

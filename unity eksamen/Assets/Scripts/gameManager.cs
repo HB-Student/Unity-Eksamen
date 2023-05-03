@@ -9,7 +9,6 @@ public class gameManager : MonoBehaviour
     public orbOfLight orbOfLight;
 	public GameObject Wizard;
 	public GameObject Warrior;
-	public GameObject Scavenger;
 	public GameObject Slime;
 	public GameObject Goblin;
 	public Dictionary<string, int> prices=new Dictionary<string, int>();
@@ -31,9 +30,6 @@ public class gameManager : MonoBehaviour
 			case "warrior":
 				entity = Warrior;
 				break;
-            case "scavenger":
-                entity = Scavenger;
-                break;
 			default:
 				return;
 		}
@@ -51,9 +47,6 @@ public class gameManager : MonoBehaviour
 			case "warrior":
 				entity = Warrior;
 				break;
-            case "scavenger":
-                entity = Scavenger;
-                break;
 			default:
 				return;
 		}
@@ -93,9 +86,8 @@ public class gameManager : MonoBehaviour
 	void Start(){
 		for (int i = 0; i < 2; i++)
 		{
-			spawnHero("scavenger");
-            spawnHero("warrior");
-            spawnHero("wizard");
+			spawnHero("warrior");
+			spawnHero("wizard");
 		}
 	
 		buyMenu.setButtons(new List<hero>{Wizard.GetComponent<hero>(),Warrior.GetComponent<hero>()});

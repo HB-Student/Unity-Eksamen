@@ -217,7 +217,6 @@ MonoBehaviour:
   orbOfLight: {fileID: 1864455264}
   Wizard: {fileID: 3739596878948285805, guid: 87e2d19339a2ca049878138c3380c992, type: 3}
   Warrior: {fileID: 7994007121605690360, guid: c94e1c77f4435a54bac8f32354812900, type: 3}
-  Scavenger: {fileID: 746136586909483989, guid: 6cae83a96c8e24b4f8a913951c2240a3, type: 3}
   Slime: {fileID: 2898378095320298682, guid: e6b9ab1b84ee42746b784c5103b7778c, type: 3}
   Goblin: {fileID: 5163084904474007992, guid: ab55d716e49e2eb49931c83835d32846, type: 3}
   currentGamestate: 0
@@ -254,7 +253,6 @@ Transform:
   m_Children:
   - {fileID: 1750556148}
   - {fileID: 1263435049}
-  - {fileID: 1083333545}
   m_Father: {fileID: 1727087865}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -978,50 +976,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981279479}
   m_CullTransparentMesh: 1
---- !u!1 &1083333544
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1083333545}
-  - component: {fileID: 1083333546}
-  m_Layer: 0
-  m_Name: scavenger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1083333545
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083333544}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 74252934}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1083333546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083333544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea3aa174e77dd7045bee0d8453221460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1093600790 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8667041968045141119, guid: 47556c7ce55bd5a4b94db5b8b4c09ab7, type: 3}
@@ -1386,14 +1340,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4697742395967167985, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
-      propertyPath: m_TagString
-      value: orb
-      objectReference: {fileID: 0}
-    - target: {fileID: 4697742395967167988, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4697742396763382204, guid: babba3da6e22e224cb54ccfff61b3bf9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

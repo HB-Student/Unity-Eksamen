@@ -12,7 +12,7 @@ public abstract class monster : character
 	public void monsterStart()
 	{
 		characterStart();
-		lootList = GameObject.FindGameObjectWithTag("lootTable").GetComponent<lootTable>();
+		//lootList = GameObject.FindGameObjectWithTag("lootTable").GetComponent<lootTable>();
 	}
 	public void monsterUpdate()
 	{
@@ -24,20 +24,17 @@ public abstract class monster : character
 	}
 	public override void dead()
 	{
+		//List<drop> drops = lootList.getTable(monsterType);
+		//foreach (var drop in drops)
+		//{
+		//	if (Random.Range(0, 100) <= drop.dropChance)
+		//	{
+		//		Instantiate(drop.item, gameObject.transform.position, Quaternion.identity);
+		//	}
+		//}
 		level.killMonster();
 		if(killed==true){
-            List<GameObject> drops = lootList.getTable(monsterType);
-            foreach (var drop in drops)
-            {
-                if (Random.Range(0, 100) <= drop.GetComponent<drop>().dropChance)
-                {
-                    int angle = Random.Range(0, 360);
-                    float x = Mathf.Cos(angle);
-                    float y = Mathf.Sin(angle);
-
-                    Instantiate(drop, gameObject.transform.position + new Vector3(x, y, 0), Quaternion.identity);
-                }
-            }
+		gm.addMoney(dropMoney);
 		}
 		Destroy(gameObject);
 	}

@@ -717,10 +717,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 519126560}
     m_Modifications:
-    - target: {fileID: 927642561724962077, guid: d32a4433f7eb415418b63d72d086cace, type: 3}
-      propertyPath: orbScript
-      value: 
-      objectReference: {fileID: 1445430926}
     - target: {fileID: 2575588572907602498, guid: d32a4433f7eb415418b63d72d086cace, type: 3}
       propertyPath: orbScript
       value: 
@@ -813,10 +809,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: skillTreeManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7362967757173574433, guid: d32a4433f7eb415418b63d72d086cace, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7362967757740696674, guid: d32a4433f7eb415418b63d72d086cace, type: 3}
       propertyPath: charMan
       value: 
@@ -825,18 +817,6 @@ PrefabInstance:
       propertyPath: charMan
       value: 
       objectReference: {fileID: 1750556149}
-    - target: {fileID: 8096657735910527140, guid: d32a4433f7eb415418b63d72d086cace, type: 3}
-      propertyPath: charMan
-      value: 
-      objectReference: {fileID: 1083333546}
-    - target: {fileID: 8096657735910527140, guid: d32a4433f7eb415418b63d72d086cace, type: 3}
-      propertyPath: buttonPrefab
-      value: 
-      objectReference: {fileID: 5412694254320020250, guid: 5f26dcf85f8ac1a4f8077b28aa39c962, type: 3}
-    - target: {fileID: 8521500975770655309, guid: d32a4433f7eb415418b63d72d086cace, type: 3}
-      propertyPath: charMan
-      value: 
-      objectReference: {fileID: 1083333546}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d32a4433f7eb415418b63d72d086cace, type: 3}
 --- !u!1 &979600045

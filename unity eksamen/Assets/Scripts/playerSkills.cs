@@ -51,21 +51,6 @@ public abstract class playerSkills
 				orbScript.setCooldownTime(0.7f);
                 orbScript.update();
                 break;
-            case "scavenger":
-                charMan.bonusStat("agility",1);
-                break;
-            case "scavenger1":
-                charMan.bonusPercentage("agility",50);
-				
-                break;
-            case "scavenger2":
-                charMan.bonusPercentage("agility",50);
-				
-                break;
-            case "scavenger3":
-                charMan.bonusStat("agility",3);
-				
-                break;
             default:
                 return;
         }

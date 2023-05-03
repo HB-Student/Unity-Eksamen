@@ -93,16 +93,12 @@ public class gameManager : MonoBehaviour
 	void Start(){
 		for (int i = 0; i < 2; i++)
 		{
-			spawnHero("scavenger");
-            spawnHero("warrior");
-            spawnHero("wizard");
+			spawnHero("warrior");
+			spawnHero("wizard");
 		}
 	
-		buyMenu.setButtons(new List<hero>{
-			Wizard.GetComponent<hero>(),
-			Warrior.GetComponent<hero>(),
-			Scavenger.GetComponent<hero>()});
-		levels.Add(new level(1,800,3,2));
+		buyMenu.setButtons(new List<hero>{Wizard.GetComponent<hero>(),Warrior.GetComponent<hero>()});
+		levels.Add(new level(1,80,3,2));
 		levels.Add(new level(2,120,3,2));
 		levels.Add(new level(3,150,5,4));
 		levels.Add(new level(4,200,10,0));

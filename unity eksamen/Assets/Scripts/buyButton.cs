@@ -66,9 +66,6 @@ public void buyHero(string ts){
             case "warrior (hero)":
 				heroToBuy = "warrior";
 				break;
-            case "scavenger (hero)":
-				heroToBuy = "scavenger";
-				break;
 			default:
 				return;
 		}

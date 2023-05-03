@@ -6,6 +6,8 @@ public class lootTable : MonoBehaviour
 {
     public List<GameObject> slimeDrops = new List<GameObject>();
     public List<int> slimeChances = new List<int>();
+    public List<GameObject> goblinDrops = new List<GameObject>();
+    public List<int> goblinChances = new List<int>();
     
     public List<drop> getTable(string type)
     {
@@ -16,6 +18,12 @@ public class lootTable : MonoBehaviour
                 for (int i = 0; i < slimeChances.Count; i++)
                 {
                     loot.Add(new drop(slimeChances[i], slimeDrops[i]));
+                }
+                return loot;
+            case "goblin":
+                for (int i = 0; i < goblinChances.Count; i++)
+                {
+                    loot.Add(new drop(goblinChances[i], goblinDrops[i]));
                 }
                 return loot;
             default:

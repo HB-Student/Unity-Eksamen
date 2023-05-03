@@ -1550,6 +1550,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3634087548874624500, guid: aee3120fd4b2cc84199214f28562c416, type: 3}
+      propertyPath: goblinDrops.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634087548874624500, guid: aee3120fd4b2cc84199214f28562c416, type: 3}
+      propertyPath: goblinChances.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634087548874624500, guid: aee3120fd4b2cc84199214f28562c416, type: 3}
       propertyPath: slimeDrops.Array.data[0]
       value: 
       objectReference: {fileID: 3565565311709375667, guid: dbb5f0b86844ab849922ac44a05047d9, type: 3}

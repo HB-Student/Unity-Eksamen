@@ -13,6 +13,9 @@ public abstract class hero : character
 			{
 				doing = action.collect;
 			}
+			else{
+                doing = action.Move;
+			}
 		}
 		else if (scanBool("monster", sightRadius.totalStat(), target.transform))
 		{

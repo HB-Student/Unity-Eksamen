@@ -8,7 +8,7 @@ public class warrior : hero
 	{
 		health = 10;
 		characterStart();
-		sightRadius.baseStat = 6;
+		sightRadius.baseStat = 4;
 	}
 	void Update()
 	{
@@ -24,7 +24,10 @@ public class warrior : hero
 				break;
 
 			case action.combat:
-				if (!cooldownOn)
+				if(Vector2.Distance(transform.position, target.transform.position)>sightRadius.totalStat()){
+					move();
+				}
+				else if (!cooldownOn)
 				{
 					cooldownOn = true;
 					StartCoroutine(attack());

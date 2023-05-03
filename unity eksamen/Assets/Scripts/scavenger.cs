@@ -9,7 +9,7 @@ public class scavenger : hero
 	{
 		health = 10;
 		characterStart();
-		sightRadius.baseStat = 6;
+		sightRadius.baseStat = 3;
 	}
 	void Update()
 	{
@@ -24,6 +24,7 @@ public class scavenger : hero
 			if (dist <= 2.5f)
 			{
 				gm.addMoney(1);
+                holdingLoot = false;
 			}
 			else
 			{
@@ -37,7 +38,6 @@ public class scavenger : hero
 			case action.Move:
 				move();
 				break;
-
 			case action.collect:
 				float space = (float)1.14f * 0.5f * (transform.localScale.x + enemy.transform.localScale.x);
 				if (Vector2.Distance(transform.position, enemy.transform.position) <= space)
@@ -50,7 +50,6 @@ public class scavenger : hero
 					moveToEnemy();
 				}
 				break;
-
 			default:
 				return;
 		}

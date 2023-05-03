@@ -25,7 +25,11 @@ public class wizard : hero
 				break;
 
 			case action.combat:
-				if (!cooldownOn)
+                if (Vector2.Distance(transform.position, target.transform.position) >= 0.75)
+                {
+                    move();
+                }
+                else if (!cooldownOn)
 				{
 					cooldownOn = true;
 					StartCoroutine(magicBall());

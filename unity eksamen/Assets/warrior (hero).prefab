@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 516686000485726262}
-  - component: {fileID: 7105345753265721913}
   - component: {fileID: 5139504871232274279}
+  - component: {fileID: 7105345753265721913}
   - component: {fileID: 1152661491157936120}
   - component: {fileID: -8629442768348934039}
   - component: {fileID: 4514371411263081315}
@@ -37,6 +37,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5139504871232274279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7994007121605690360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5ab59904c0589419cb8e9340b8207f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
+  doing: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  health: 0
+  gm: {fileID: 0}
+  cooldownOn: 0
+  healtbar: {fileID: 0}
+  target: {fileID: 0}
+  price: 1
+  text: The warror is quick with a low range
 --- !u!212 &7105345753265721913
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -89,29 +111,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5139504871232274279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7994007121605690360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a5ab59904c0589419cb8e9340b8207f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  doing: 0
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
-  health: 0
-  gm: {fileID: 0}
-  cooldownOn: 0
-  healtbar: {fileID: 2370625266235999595}
-  target: {fileID: 0}
-  price: 1
-  img: {fileID: -278831195, guid: 3a702dae3f98695448f3e6af2b044a53, type: 3}
-  text: The warror is quick with a low range
 --- !u!61 &1152661491157936120
 BoxCollider2D:
   m_ObjectHideFlags: 0

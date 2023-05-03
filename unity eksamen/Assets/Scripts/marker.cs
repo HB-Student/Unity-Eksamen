@@ -68,16 +68,18 @@ public class marker : MonoBehaviour
 		foreach (var hero in controllingList)
 		{
 			Transform attackArea;
+			float scale;
 			if (hero.transform.parent.name == "warrior")
 			{
 				attackArea = hero.GetComponent<character>().target.transform;
+                scale = 2 * hero.GetComponent<hero>().sightRadius.totalStat();
 			}
 			else
 			{
 				attackArea = hero.transform;
+                scale = 1 / hero.transform.localScale.x * (2 * hero.GetComponent<hero>().sightRadius.totalStat());
 			}
 			GameObject rangeClone = Instantiate(rangeVFX, attackArea);
-			int scale = 2 * hero.GetComponent<hero>().sightRadius.totalStat();
 			rangeClone.transform.localScale = new Vector2(scale, scale);
 		}
 		return controllingList;
@@ -89,7 +91,8 @@ public class marker : MonoBehaviour
 		{
 			foreach (var hero in controllingList)
 			{
-				hero.GetComponent<hero>().target.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				hero.GetComponent<hero>().target.transform.position = new Vector3 (mousePos.x,mousePos.y,0);
 			}
 		}
 	}

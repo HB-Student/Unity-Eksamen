@@ -11,6 +11,7 @@ TagManager:
   - monster
   - orb
   - range
+  - resource
   layers:
   - Default
   - TransparentFX

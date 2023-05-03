@@ -6,13 +6,13 @@ public abstract class character : scanners, characterInterface
 {
 	public enum action
 	{
-		Idle,
+		collect,
 		Move,
 		combat
 	}
 
 	public Dictionary<string, int> Stats = new Dictionary<string, int>();
-	public action doing = action.Idle;
+	public action doing;
 	public Color originalColor;
 	public int health;
 	public stat vitality = new stat("vitality");
@@ -59,12 +59,12 @@ public abstract class character : scanners, characterInterface
 		}
 		Color originalColor = gameObject.GetComponent<SpriteRenderer>().color;
 		target = new GameObject("target");
-		target.transform.position = new Vector2(0, 0);
+		target.transform.position = new Vector3(0, 0, 0);
 	}
 
 	public void move()
 	{
-		if (Vector2.Distance(transform.position, target.transform.position) <= 0.75f * gameObject.transform.localScale.x)
+		if (Vector2.Distance(transform.position, target.transform.position) <= 0.75f)
 		{
 			target.transform.position = transform.position;
 		}

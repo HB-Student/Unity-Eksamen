@@ -8,7 +8,17 @@ public abstract class hero : character
 	private Animation levelUpAnim;
 	public override void decide()
 	{
-		if (scanBool("monster", sightRadius.totalStat(), target.transform))
+		if (gameObject.transform.parent.name == "scavenger")
+		{
+			if (scanBool("resource", sightRadius.totalStat(), gameObject.transform))
+			{
+				doing = action.collect;
+			}
+			else{
+                doing = action.Move;
+			}
+		}
+		else if (scanBool("monster", sightRadius.totalStat(), target.transform))
 		{
 			doing = action.combat;
 

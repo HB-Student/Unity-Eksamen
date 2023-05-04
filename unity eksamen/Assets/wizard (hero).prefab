@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1768379373289990530}
   - component: {fileID: 7590128341277778376}
   - component: {fileID: 1176832633761685702}
-  - component: {fileID: -1851054676102516149}
   m_Layer: 0
   m_Name: wizard (hero)
   m_TagString: hero
@@ -160,22 +159,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!111 &-1851054676102516149
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3739596878948285805}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 29fb088edb900744dbdbc1913025cc5e, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 29fb088edb900744dbdbc1913025cc5e, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &1797553460233085309
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7105345753265721913}
   - component: {fileID: 1152661491157936120}
   - component: {fileID: -8629442768348934039}
-  - component: {fileID: 4514371411263081315}
   m_Layer: 0
   m_Name: warrior (hero)
   m_TagString: hero
@@ -159,22 +158,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!111 &4514371411263081315
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7994007121605690360}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 29fb088edb900744dbdbc1913025cc5e, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 29fb088edb900744dbdbc1913025cc5e, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &1706423001196722659
 PrefabInstance:
   m_ObjectHideFlags: 0

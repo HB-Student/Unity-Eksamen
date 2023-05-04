@@ -37,8 +37,8 @@ public class characterManager : MonoBehaviour
 				default:
 					return;
 			}
-			child.GetComponent<Animation>().Play("heroLevelUp");
 		}
+		gameObject.GetComponent<Animation>().Play("heroLevelUp");
 	}
 	public void bonusPercentage(string stat, int difference)
 	{
@@ -70,9 +70,8 @@ public class characterManager : MonoBehaviour
 				default:
 					return;
 			}
-			child.GetComponent<Animation>().Play("heroLevelUp");
 		}
-
+			gameObject.GetComponent<Animation>().Play("heroLevelUp");
 	}
 
 }

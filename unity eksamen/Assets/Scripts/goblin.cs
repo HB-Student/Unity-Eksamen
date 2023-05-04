@@ -10,7 +10,6 @@ public class goblin : monster
 		monsterStart();
 		hitPoint=20;
 		monsterType = "goblin";
-		health = 5;
 		sightRadius.baseStat = 4;
 		agility.baseStat = 3;
 	}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5376282185235364569}
   - component: {fileID: 2938276984701993963}
   - component: {fileID: 6169484714519894086}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: greenCoin
   m_TagString: resource
   m_Icon: {fileID: 0}

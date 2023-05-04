@@ -1,9 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+
 using UnityEngine.UI;
 public abstract class hero : character
 {
     public int price;
-	public Sprite img;
+    public GameObject rangeVFX;
+    public Sprite img;
     public string text;
 	private Animation levelUpAnim;
 	public override void decide()
@@ -30,14 +34,30 @@ public abstract class hero : character
 	}
 	public override void dead()
 	{
-		if (transform.parent.name == "warrior"){
-			GameObject rangeVFX = gameObject.GetComponent<warrior>().rangeVFX;
-			if (rangeVFX != null)
+		List<GameObject> rangeVFXList = GameObject.FindGameObjectWithTag("marker").GetComponent<marker>().controllingList;
+		if (rangeVFXList.Contains(gameObject)){
+            rangeVFXList.Remove(gameObject);
+		}
+        Destroy(gameObject.GetComponent<character>().target);
+		Destroy(gameObject);
+	}
+    public void deleteRangeVFX(GameObject hero)
+    {
+		GameObject rangeParent;
+		if (hero.transform.parent.name == "warrior")
+		{
+			rangeParent = hero.GetComponent<character>().target;
+		}
+		else
+		{
+			rangeParent = hero;
+		}
+		for (int i = 0; i < rangeParent.transform.childCount; i++)
+		{
+			if (rangeParent.transform.GetChild(i).tag == "range")
 			{
-				GameObject.Find("Marker(Clone)").GetComponent<marker>().controllingList.Remove(rangeVFX);
-				Destroy(rangeVFX);
+				Destroy(rangeParent.transform.GetChild(i).gameObject);
 			}
 		}
-		Destroy(gameObject);
 	}
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7105345753265721913}
   - component: {fileID: 1152661491157936120}
   - component: {fileID: -8629442768348934039}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: warrior (hero)
   m_TagString: hero
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   doing: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
-  health: 0
+  health: 5
   gm: {fileID: 0}
   cooldownOn: 0
   healtbar: {fileID: 2370625266235999595}

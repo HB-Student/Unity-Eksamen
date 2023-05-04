@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8701052420018133760}
   - component: {fileID: 8367306951910907273}
   - component: {fileID: 7288995155021431447}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pinkCoin
   m_TagString: resource
   m_Icon: {fileID: 0}

@@ -41,18 +41,16 @@ public class orbOfLight : MonoBehaviour
             Vector2 mousePosition = mainCam.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D[] hit = Physics2D.RaycastAll(mousePosition, Vector2.zero);
             foreach (var collider in hit)
-            {
-            if (collider != null)
-            {
-                // perform actions on the clicked object here
-                if(collider.transform.name=="TheOrb"){
-                    skilleTree.showTree();
+                {
+                if (collider != null)
+                {
+                    // perform actions on the clicked object here
+                    if(collider.transform.name=="TheOrb"){
+                        skilleTree.showTree();
+                    }
                 }
-                
             }
-            
         }
-    }
     }
 
     public void TakeDamage(int damage){

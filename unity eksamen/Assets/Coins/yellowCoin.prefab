@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3003011350121715784}
   - component: {fileID: 3005462934531521473}
   - component: {fileID: 3415821250431445706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: yellowCoin
   m_TagString: resource
   m_Icon: {fileID: 0}

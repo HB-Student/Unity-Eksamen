@@ -12,6 +12,7 @@ TagManager:
   - orb
   - range
   - resource
+  - marker
   layers:
   - Default
   - TransparentFX
@@ -19,11 +20,11 @@ TagManager:
   - orb
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - scavenger
+  - wizard
+  - warrior
+  - monster
+  - resource
   - 
   - 
   - 

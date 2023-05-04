@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1197030729226349314}
   - component: {fileID: -1399543435793698678}
   - component: {fileID: 8287244405298592260}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: goblin (monster)
   m_TagString: monster
   m_Icon: {fileID: 0}
@@ -102,9 +102,10 @@ MonoBehaviour:
   enemy: {fileID: 0}
   doing: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
-  health: 20
+  health: 3
   gm: {fileID: 0}
   cooldownOn: 0
+  healtbar: {fileID: 0}
   target: {fileID: 0}
   monsterType: 
   hitPoint: 0
@@ -126,7 +127,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1.6, y: 1.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

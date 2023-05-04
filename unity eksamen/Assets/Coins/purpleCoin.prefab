@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8832596265736474548}
   - component: {fileID: 1833669625481717044}
   - component: {fileID: 319906033481677751}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: purpleCoin
   m_TagString: resource
   m_Icon: {fileID: 0}

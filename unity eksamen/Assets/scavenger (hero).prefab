@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3849596219030405508}
   - component: {fileID: 1086660060805694236}
   - component: {fileID: 3659898552734697259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: scavenger (hero)
   m_TagString: hero
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   doing: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
-  health: 0
+  health: 3
   gm: {fileID: 0}
   cooldownOn: 0
   healtbar: {fileID: 2851935644033750025}

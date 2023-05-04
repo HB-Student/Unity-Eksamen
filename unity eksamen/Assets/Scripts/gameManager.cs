@@ -91,7 +91,6 @@ public class gameManager : MonoBehaviour
 		buyMenu.setMoney(money);
 	}
 	void Start(){
-		money=20;
 		buyMenu.setButtons(new List<hero>{
 		Wizard.GetComponent<hero>(),
 		Warrior.GetComponent<hero>(),
@@ -109,8 +108,11 @@ public class gameManager : MonoBehaviour
 		levels.Add(new level(10,102,10,15));
 
 		nextLevel=levels[0];
-
-		money=0;
+		StartCoroutine(startingMoney(20));
+	}
+	IEnumerator startingMoney(int amount){
+		yield return new WaitForEndOfFrame();
+		addMoney(amount);
 	}
 
 	public void startNextLevel(){

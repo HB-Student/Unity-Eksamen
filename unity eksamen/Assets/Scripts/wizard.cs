@@ -7,7 +7,6 @@ public class wizard : hero
 	public GameObject projectile;
 	void Start()
 	{
-		health = 10;
 		characterStart();
 		sightRadius.baseStat = 6;
 	}
@@ -45,7 +44,7 @@ public class wizard : hero
 		GameObject magicBall = Instantiate(projectile, transform.position, Quaternion.identity);
 		magicBall.GetComponent<wizardBullet>().target = enemy;
 		magicBall.GetComponent<wizardBullet>().damage = strength.totalStat();
-		yield return new WaitForSeconds(3 / (1 + 0.1f * abilityHaste.totalStat()));
+		yield return new WaitForSeconds(2 / (1 + 0.1f * abilityHaste.totalStat()));
 
 		cooldownOn = false;
 	}

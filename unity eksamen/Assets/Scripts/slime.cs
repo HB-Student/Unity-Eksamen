@@ -10,7 +10,6 @@ public class slime : monster
 		hitPoint=10;
 		monsterStart();
 		monsterType = "slime";
-		health = 3;
 		sightRadius.baseStat = 4;
 	}
 	void Update()
@@ -72,7 +71,7 @@ public class slime : monster
 			{
 				enemy.GetComponent<hero>().takeDamage(strength.totalStat());
 			}
-			yield return new WaitUntil(new Func<bool>(() => Time.time - startTime >= 3 / (1 + 0.1f * abilityHaste.totalStat())));
+			yield return new WaitUntil(new Func<bool>(() => Time.time - startTime >= 2 / (1 + 0.1f * abilityHaste.totalStat())));
 		}
 		agility.bonusPercentage = GetComponentInParent<characterManager>().agility.bonusPercentage;
 		cooldownOn = false;

@@ -60,13 +60,11 @@ public abstract class monster : character
 
     void OnTriggerEnter2D (Collider2D collision)
 	{
-	    // Check if the colliding object has a specific tag
 	    if (collision.gameObject.name=="damageZone")
 	    {
-	        // Do something when the moving object collides with the stationary object
 			collision.gameObject.transform.parent.GetComponent<orbOfLight>().TakeDamage(hitPoint);
 	    	killed=false;
-			this.dead();
+			dead();
 		}
 	}
 }

@@ -42,50 +42,52 @@ public class marker : MonoBehaviour
 	}
 	public List<GameObject> controlHeros()
 	{
-		if (controllingList.Count != 0)
-		{
-			foreach (var hero in controllingList)
-			{
-				GameObject rangeParent;
-				if (hero.transform.parent.name == "warrior")
-				{
-					rangeParent = hero.GetComponent<character>().target;
-				}
-				else
-				{
-					rangeParent = hero;
-				}
-				for (int i = 0; i < rangeParent.transform.childCount; i++)
-				{
-					if (rangeParent.transform.GetChild(i).tag == "range")
-					{
-						Destroy(rangeParent.transform.GetChild(i).gameObject);
-					}
-				}
-			}
-		}
+		deleteRangeVFX(controllingList);
 		controllingList = scanList("hero", gameObject);
 		foreach (var hero in controllingList)
 		{
 			Transform attackArea;
 			float scale;
-			GameObject rangeClone;
 			if (hero.transform.parent.name == "warrior")
 			{
 				attackArea = hero.GetComponent<character>().target.transform;
                 scale = 2 * hero.GetComponent<hero>().sightRadius.totalStat();
-				rangeClone = Instantiate(rangeVFX, attackArea);
-				hero.GetComponent<warrior>().rangeVFX = rangeClone;
 			}
 			else
 			{
 				attackArea = hero.transform;
                 scale = 1 / hero.transform.localScale.x * (2 * hero.GetComponent<hero>().sightRadius.totalStat());
-				rangeClone = Instantiate(rangeVFX, attackArea);
 			}
+            GameObject rangeClone = Instantiate(rangeVFX, attackArea);
+            hero.GetComponent<hero>().rangeVFX = rangeClone;
 			rangeClone.transform.localScale = new Vector2(scale, scale);
 		}
 		return controllingList;
+	}
+
+	public void deleteRangeVFX(List<GameObject> heroList){
+        if (heroList.Count != 0)
+        {
+            foreach (var hero in heroList)
+            {
+                GameObject rangeParent;
+                if (hero.transform.parent.name == "warrior")
+                {
+                    rangeParent = hero.GetComponent<character>().target;
+                }
+                else
+                {
+                    rangeParent = hero;
+                }
+                for (int i = 0; i < rangeParent.transform.childCount; i++)
+                {
+                    if (rangeParent.transform.GetChild(i).tag == "range")
+                    {
+                        Destroy(rangeParent.transform.GetChild(i).gameObject);
+                    }
+                }
+            }
+        }
 	}
 
 	public void checkForMove()

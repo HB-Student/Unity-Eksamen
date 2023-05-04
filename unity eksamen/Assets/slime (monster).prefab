@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9037144304511003374}
   - component: {fileID: 1616245275352093676}
   - component: {fileID: -8558430722656038950}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: slime (monster)
   m_TagString: monster
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   doing: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
-  health: 10
+  health: 4
   gm: {fileID: 0}
   cooldownOn: 0
   healtbar: {fileID: 0}

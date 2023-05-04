@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9218245169152588331}
   - component: {fileID: 1245954709679314951}
   - component: {fileID: 1806991855457935436}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: blueCoin
   m_TagString: resource
   m_Icon: {fileID: 0}

@@ -4,10 +4,8 @@ using UnityEngine;
 public class warrior : hero
 {
 	float startTime;
-	public GameObject rangeVFX;
 	void Start()
 	{
-		health = 10;
 		characterStart();
 		sightRadius.baseStat = 4;
 	}
@@ -48,7 +46,7 @@ public class warrior : hero
 		if (scanList("monster", 1f,transform).Count > 0)
 		{
 			enemy.GetComponent<monster>().takeDamage(strength.totalStat());
-			yield return new WaitForSeconds(2 / (1 + 0.1f * abilityHaste.totalStat()));
+			yield return new WaitForSeconds(1.5f / (1 + 0.1f * abilityHaste.totalStat()));
 		}
 		else
 		{

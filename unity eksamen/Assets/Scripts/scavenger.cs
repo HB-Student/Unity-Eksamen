@@ -8,9 +8,8 @@ public class scavenger : hero
 	int holdingValue = 0;
 	void Start()
 	{
-		health = 10;
 		characterStart();
-		sightRadius.baseStat = 3;
+		sightRadius.baseStat = 20;
 	}
 	void Update()
 	{
@@ -21,7 +20,6 @@ public class scavenger : hero
 	{
 		if (holdingLoot)
 		{
-			float dist = Vector2.Distance(transform.position, new Vector2(0, 0));
 			if (scanBool("orb",1f,gameObject.transform))
 			{
 				gm.addMoney(holdingValue);
@@ -40,7 +38,8 @@ public class scavenger : hero
 			switch (doing)
 			{
 				case action.Move:
-					move();
+                    target.transform.position = new Vector2(0, 0);
+                    move();
 					break;
 				case action.collect:
 					float space = (float)1.14f * 0.5f * (transform.localScale.x + enemy.transform.localScale.x);

@@ -52,6 +52,7 @@ public abstract class character : scanners, characterInterface
 	public GameObject target;
 	public void characterStart()
 	{
+		vitality.baseStat = health;
 		gm = GameObject.Find("GameManager").GetComponent<gameManager>();
 		if (healtbar != null)
 		{

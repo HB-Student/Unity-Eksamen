@@ -15,11 +15,11 @@ public class moveCam : MonoBehaviour
         zoom = GetComponent<Camera>().orthographicSize;
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition)-transform.position;
         worldPosition = (worldPosition*5)/zoom;
-        if(worldPosition.x>9){
-            transform.position=new Vector3(transform.position.x+(worldPosition.x-9)*0.05f, transform.position.y,camZ);
+        if(worldPosition.x>7){
+            transform.position=new Vector3(transform.position.x+(worldPosition.x-7)*0.05f, transform.position.y,camZ);
         }
-        if(worldPosition.x<-9){
-            transform.position=new Vector3(transform.position.x-(worldPosition.x+9)*-0.05f, transform.position.y,camZ);
+        if(worldPosition.x<-7){
+            transform.position=new Vector3(transform.position.x-(worldPosition.x+7)*-0.05f, transform.position.y,camZ);
         }
         if(worldPosition.y>3.5f){
             transform.position=new Vector3(transform.position.x, transform.position.y+(worldPosition.y+3.5f)*0.005f,camZ);

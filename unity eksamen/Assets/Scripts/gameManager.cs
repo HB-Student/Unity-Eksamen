@@ -97,7 +97,7 @@ public class gameManager : MonoBehaviour
 		Warrior.GetComponent<hero>(),
 		Scavenger.GetComponent<hero>()});
 
-		levels.Add(new level(1,70, 1, 3));
+		levels.Add(new level(1,70,3,2));
 		levels.Add(new level(2,80,3,2));
 		levels.Add(new level(3,100,7,4));
 		levels.Add(new level(4,120,10,0));
@@ -107,13 +107,7 @@ public class gameManager : MonoBehaviour
 		levels.Add(new level(8,100,19,3));
 		levels.Add(new level(9,350,15,10));
 		levels.Add(new level(10,102,10,15));
-		levels.Add(new level(11,202,7,8));
-		levels.Add(new level(12,203,4,4));
-		levels.Add(new level(13,380,5,4));
-		levels.Add(new level(14,420,10,0));
-		levels.Add(new level(15,420,0,10));
-		levels.Add(new level(16,420,7,8));
-		levels.Add(new level(17,420,4,4));
+
 		nextLevel=levels[0];
 
 		money=0;

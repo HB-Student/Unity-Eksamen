@@ -18,19 +18,15 @@ public class orbOfLight : MonoBehaviour
     void Start()
     {
         mainCam = Camera.main;
-        maxHealth=50; 
+        maxHealth=100; 
         currentHealth=maxHealth;
         healthBar.setMax(maxHealth);
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space)){
-            TakeDamage(10);
-        }        
+    {  
         DetectObjectWithRaycast();
-
     }
 
 

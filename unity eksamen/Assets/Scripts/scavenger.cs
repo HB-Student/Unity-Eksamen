@@ -9,7 +9,7 @@ public class scavenger : hero
 	void Start()
 	{
 		characterStart();
-		sightRadius.baseStat = 20;
+		sightRadius.baseStat = 10;
 	}
 	void Update()
 	{

@@ -4,6 +4,7 @@ using UnityEngine;
 public class warrior : hero
 {
 	float startTime;
+	public GameObject rangeVFX;
 	void Start()
 	{
 		health = 10;

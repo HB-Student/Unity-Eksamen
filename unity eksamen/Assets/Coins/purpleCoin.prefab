@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4111969250169679883}
   - component: {fileID: 8832596265736474548}
   - component: {fileID: 1833669625481717044}
+  - component: {fileID: 319906033481677751}
   m_Layer: 0
   m_Name: purpleCoin
   m_TagString: resource
@@ -126,3 +127,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropChance: 5
   value: 4
+--- !u!50 &319906033481677751
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8503394908507740780}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

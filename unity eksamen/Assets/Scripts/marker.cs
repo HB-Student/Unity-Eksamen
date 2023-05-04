@@ -69,17 +69,20 @@ public class marker : MonoBehaviour
 		{
 			Transform attackArea;
 			float scale;
+			GameObject rangeClone;
 			if (hero.transform.parent.name == "warrior")
 			{
 				attackArea = hero.GetComponent<character>().target.transform;
                 scale = 2 * hero.GetComponent<hero>().sightRadius.totalStat();
+				rangeClone = Instantiate(rangeVFX, attackArea);
+				hero.GetComponent<warrior>().rangeVFX = rangeClone;
 			}
 			else
 			{
 				attackArea = hero.transform;
                 scale = 1 / hero.transform.localScale.x * (2 * hero.GetComponent<hero>().sightRadius.totalStat());
+				rangeClone = Instantiate(rangeVFX, attackArea);
 			}
-			GameObject rangeClone = Instantiate(rangeVFX, attackArea);
 			rangeClone.transform.localScale = new Vector2(scale, scale);
 		}
 		return controllingList;

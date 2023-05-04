@@ -30,6 +30,14 @@ public abstract class hero : character
 	}
 	public override void dead()
 	{
+		if (transform.parent.name == "warrior"){
+			GameObject rangeVFX = gameObject.GetComponent<warrior>().rangeVFX;
+			if (rangeVFX != null)
+			{
+				GameObject.Find("Marker(Clone)").GetComponent<marker>().controllingList.Remove(rangeVFX);
+				Destroy(rangeVFX);
+			}
+		}
 		Destroy(gameObject);
 	}
 }

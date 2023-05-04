@@ -3,12 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - button
+  - lootTable
+  - hero
+  - Undefined
+  - monster
+  - orb
+  - range
+  - resource
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - orb
   - Water
   - UI
   - 
@@ -40,4 +48,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2567329281
+    locked: 0
+  - name: Characters
+    uniqueID: 3052392733
     locked: 0

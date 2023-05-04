@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1663155128509089440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6150540401506706201}
+  - component: {fileID: 3634087548874624500}
+  m_Layer: 0
+  m_Name: lootTable
+  m_TagString: lootTable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6150540401506706201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663155128509089440}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3634087548874624500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663155128509089440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3137aeb11ce26e48b9d10bf9b8ca721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slimeDrops:
+  - {fileID: 3354917350872745848, guid: 47c65fb89cb7e70429cb1a6500170ddc, type: 3}
+  - {fileID: 6218895705063862512, guid: f4cdb5d05feabc34c8b1491f10649991, type: 3}
+  - {fileID: 948145621170648379, guid: 7d8c80960327bc945af1630a188b9975, type: 3}
+  - {fileID: 8503394908507740780, guid: 2b1aee5995fb6fe43a5ce6219c6e2e69, type: 3}
+  - {fileID: 992372019872643995, guid: c6e6a1de86930684f9334186d16d8fd7, type: 3}
+  slimeChances: 320000001e000000140000000a00000005000000
+  goblinDrops:
+  - {fileID: 3354917350872745848, guid: 47c65fb89cb7e70429cb1a6500170ddc, type: 3}
+  - {fileID: 6218895705063862512, guid: f4cdb5d05feabc34c8b1491f10649991, type: 3}
+  - {fileID: 948145621170648379, guid: 7d8c80960327bc945af1630a188b9975, type: 3}
+  - {fileID: 8503394908507740780, guid: 2b1aee5995fb6fe43a5ce6219c6e2e69, type: 3}
+  - {fileID: 992372019872643995, guid: c6e6a1de86930684f9334186d16d8fd7, type: 3}
+  goblinChances: 320000001e000000140000000a00000005000000

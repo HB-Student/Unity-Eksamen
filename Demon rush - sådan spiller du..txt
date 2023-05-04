@@ -1,0 +1,27 @@
+Demon rush - sådan spiller du.
+
+For at spille åbnes filen "unity eksamen.exe".
+Dette åbner en menu der med to muligheder "play" og "quit".
+For at spille spillet trykkes der på "play".
+Derefter kommer der en spilskærm frem. 
+Her er der flere elementer:
+
+Levelelementet oppe i toppen. Her står ens level, en XP i det level og hvor mange levelpoints/mana man har.
+Trykkes der på den gule cirkel i midten kommer der en menu frem, her kan man opgradere sine heroes med levelpoints.
+
+Oppe i højre hjørne er der et kort, der viser positionen på dine fjender.
+
+Nede i højre hjørne er der en "start level" knap. Denne kanp starte et nyt level, hvorefter der kommer nye fjender på skærmen.
+
+Trykkes der på "e" kommer der en købe menu op. I denne menu kan man købe nye heroes, for penge som monstrerne dropper.
+
+Der er tre typer heroes.
+Scavenger: små blå, disse henter drops fra døde enemies.
+Wizard: disse skyder kugler efter enemies.
+Warrior: disse angreber enemies med deres egen krop.
+
+Der er to typer enemies:
+slime: de angreber specifikt heroes
+Goblins: disse går kun efter the orb of light.
+
+Spillet er færdigt når ens orb of light løber tør for liv.
